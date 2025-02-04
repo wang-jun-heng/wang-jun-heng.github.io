@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基础乐理 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="1 音名与钢琴键盘1.1 钢琴键盘的基本布局  钢琴有88个键，去掉左侧3个键(2白1黑)，去掉最右边1个白键。剩下84个键，分为7组，每组12个键 —— 7个白键和5个黑键。     注意看，每组的黑键有规律，都是两个、三个紧挨着。   1.2 音名音名简单来说就是音高(频率高低)的名称。 **白键音名：**C D E F G A B （不要记什么1 2 3 4 5 6 7）       半音">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础乐理">
+<meta property="og:url" content="http://example.com/2023/03/19/Basic-music-theory/index.html">
+<meta property="og:site_name" content="君恒的博客">
+<meta property="og:description" content="1 音名与钢琴键盘1.1 钢琴键盘的基本布局  钢琴有88个键，去掉左侧3个键(2白1黑)，去掉最右边1个白键。剩下84个键，分为7组，每组12个键 —— 7个白键和5个黑键。     注意看，每组的黑键有规律，都是两个、三个紧挨着。   1.2 音名音名简单来说就是音高(频率高低)的名称。 **白键音名：**C D E F G A B （不要记什么1 2 3 4 5 6 7）       半音">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic1.imgdb.cn/item/67a21b31d0e0a243d4fbd285.jpg">
+<meta property="article:published_time" content="2023-03-19T12:08:02.000Z">
+<meta property="article:modified_time" content="2025-02-04T13:51:10.794Z">
+<meta property="article:author" content="君恒">
+<meta property="article:tag" content="乐理">
+<meta property="article:tag" content="速成课">
+<meta property="article:tag" content="基本概念">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.imgdb.cn/item/67a21b31d0e0a243d4fbd285.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "基础乐理",
+  "url": "http://example.com/2023/03/19/Basic-music-theory/",
+  "image": "https://pic1.imgdb.cn/item/67a21b31d0e0a243d4fbd285.jpg",
+  "datePublished": "2023-03-19T12:08:02.000Z",
+  "dateModified": "2025-02-04T13:51:10.794Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "君恒",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/butterfly-icon.png"><link rel="canonical" href="http://example.com/2023/03/19/Basic-music-theory/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基础乐理',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://pic1.imgdb.cn/item/67a21b31d0e0a243d4fbd285.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">君恒的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">基础乐理</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">基础乐理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-19T12:08:02.000Z" title="发表于 2023-03-19 20:08:02">2023-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-04T13:51:10.794Z" title="更新于 2025-02-04 21:51:10">2025-02-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/">我的生活记录</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E7%88%B1%E5%A5%BD%E4%B8%8E%E6%8F%90%E5%8D%87/">爱好与提升</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-04 21:51:10&quot;}" hidden></div><h3 id="1-音名与钢琴键盘"><a href="#1-音名与钢琴键盘" class="headerlink" title="1 音名与钢琴键盘"></a>1 音名与钢琴键盘</h3><h4 id="1-1-钢琴键盘的基本布局"><a href="#1-1-钢琴键盘的基本布局" class="headerlink" title="1.1 钢琴键盘的基本布局"></a>1.1 钢琴键盘的基本布局</h4><center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6416f88ca682492fcc011159.jpg" style="zoom:80%" /></center>
+
+<p>钢琴有88个键，去掉左侧3个键(2白1黑)，去掉最右边1个白键。剩下84个键，分为7组，每组12个键 —— 7个白键和5个黑键。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6416fa98a682492fcc046303.jpg" style="zoom:50%" /></center>
+
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6416fc57a682492fcc07006e.jpg" style="zoom:50%" /></center>
+
+<p>注意看，每组的黑键有规律，都是两个、三个紧挨着。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6416fab6a682492fcc048f32.jpg" style="zoom:20%" /></center>
+
+<h4 id="1-2-音名"><a href="#1-2-音名" class="headerlink" title="1.2 音名"></a>1.2 音名</h4><p>音名简单来说就是音高(频率高低)的名称。</p>
+<p>**白键音名：**C D E F G A B （不要记什么1 2 3 4 5 6 7）</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6416fd63a682492fcc088d06.jpg" style="zoom:20%" /></center>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">半音</th>
+<th align="left">全音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>概念</strong></td>
+<td align="left">两个相邻音之间的关系，就叫半音关系</td>
+<td align="left">两个相隔音之间的关系，就叫全音关系</td>
+</tr>
+<tr>
+<td align="left"><strong>例子</strong></td>
+<td align="left">E&#x2F;F、B&#x2F;C之间是半音，它们中间没有黑键</td>
+<td align="left">如C&#x2F;D，或者”黑白黑”的这两个黑键的音</td>
+</tr>
+</tbody></table>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641703a5a682492fcc1324ec.jpg" style="zoom:30%" /></center>
+
+<p>**黑键音名：**黑键没有自己的音名，它借相邻的音名来指示。</p>
+<p>&emsp;&emsp; 如<code>C</code>右边紧挨的黑键，叫“升C键”，标记为<code>#C</code>或<code>C#</code>，此外这个键同时是<code>D</code>左边紧挨的，所以又称为“降D键”，标记为<code>bD</code>或<code>Db</code>。也就是说一个黑键有两种叫法。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6417059fa682492fcc168932.jpg" style="zoom:30%" /></center>
+
+<blockquote>
+<p>注意1：在钢琴上，音越往右越高，音越往左越低。</p>
+</blockquote>
+<blockquote>
+<p>注意2：黑键有两个名字，是否可以随便选择一个使用？<br>答案是不可以。乐谱中符号叫：还原号(Natural，<code>ヰ</code>或<code>♮</code>)，先不用具体管它的定义。它可以将<code>C#</code>“还原”为 <code>C</code>，或将<code>Db</code>还原为<code>D</code>，此时，对于黑键不同的音名，使用还原号得到的结果不同，所以两个音名不能随便用。至于什么时候用什么音名，后面会讲。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641706c5a682492fcc1856f4.jpg" style="zoom:30%" /></p>
+</blockquote>
+<p>**等音：**简单来说就是音高相同而记法和意义不同的音，通俗地说就是两个音的音高听起来完全相同(在十二平均律中)，而它们的记法和意义不同。</p>
+<p>&emsp;&emsp; 如白键E&#x2F;F、B&#x2F;C之间没有黑键，它们的升降如何表示呢。对于<code>E</code>来说，往前升半音就是到了<code>F</code>，因此<code>F</code>的等音是<code>#E</code>，同理对于<code>F</code>来说，往后降半音就是到了<code>E</code>，因此<code>E</code>的等音是<code>bF</code>。对于B&#x2F;C也是同样分析。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64170a4fa682492fcc1f24be.jpg" style="zoom:30%" /></center>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>重升</th>
+<th>重降</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>意义</strong></td>
+<td>连续升两次半音</td>
+<td>连续降两次半音</td>
+</tr>
+<tr>
+<td><strong>符号</strong></td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64170ba4a682492fcc219df5.jpg" style="zoom:60%" /></td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64170bbba682492fcc21c56a.jpg" style="zoom:60%" /></td>
+</tr>
+<tr>
+<td><strong>例子</strong></td>
+<td>重升<code>C</code>就是到了<code>D</code>键</td>
+<td>重降<code>D</code>就是到了<code>C</code>键</td>
+</tr>
+</tbody></table>
+<table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=HoneyDew><font size="3">
+<strong>🐹 补：</strong> 区分同一音名的不同键
+
+<ul>
+<li><p>大字组：字母大写；最左边的有下标区分。</p>
+</li>
+<li><p>小字组：字母小写；右边的有上标区分。</p>
+</li>
+<li><p>钢琴标准键盘布局如下：</p>
+<ul>
+<li>大字二组、【大字一组、大字组 | 小字组、小字一组、小字二组、小字三组、小字四组】，中央 C 是 c1</li>
+<li>在编曲软件里，更简化了，直接把上式的 【…】分别记为 C0【C1、C2、C3、…、C7】，其中中央 C 是 C3</li>
+</ul>
+</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64171522a682492fcc357c3b.jpg" style="zoom:60%" /></center>
+
+<p></font></td></table></p>
+<h4 id="1-3-音符时值"><a href="#1-3-音符时值" class="headerlink" title="1.3 音符时值"></a>1.3 音符时值</h4><p>音的时值就是音的长短。只要是音肯定有时长，每个音可能唱得长或短。(PS：我们还没学到简谱的1 2 3 4 5 6 7，所以暂时用$X$来替代)。</p>
+<ul>
+<li>最常见的音符时值：<ul>
+<li>1 全音符：$X—$</li>
+<li>1&#x2F;2 二分音符：$X-$，全音符是二分音符时长的2倍；</li>
+<li>1&#x2F;4 四分音符：$X$，二分音符是四分音符时长的2倍；</li>
+<li>1&#x2F;8 八分音符：$\underline{X}$，四分音符是八分音符时长的2倍；</li>
+<li>1&#x2F;16 十六分音符：$\underline{\underline X}$，八分音符是十六分分音符时长的2倍；</li>
+<li>$\cdots$</li>
+</ul>
+</li>
+</ul>
+<p>**休止符：**不发音、”休息”、”换气”，一般用$0$来表示。</p>
+<ul>
+<li>常见休止符的音符时值：<ul>
+<li>全休止符：$0 0 0 0$</li>
+<li>二分休止符：$0 0$</li>
+<li>四分休止符：$0$</li>
+<li>八分休止符：$\underline{0}$</li>
+<li>十六分休止符：$\underline{\underline 0}$</li>
+<li>$\cdots$</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-拍号"><a href="#1-4-拍号" class="headerlink" title="1.4 拍号"></a>1.4 拍号</h4><p>拍号，即音乐的节奏律动，以分数的形式来表达拍号。</p>
+<ul>
+<li><p>4&#x2F;4：念 “4 4 拍”，即 “以 4 分音符为一拍，每小节有4拍”</p>
+<ul>
+<li>分母 &#x3D; 4：以 4 分音符为一拍<ul>
+<li>诶，那此时，二分音符就是2拍，全音符就是4拍，八分音符是半拍</li>
+</ul>
+</li>
+<li>分子 &#x3D; 4：每小节有 4 拍<ul>
+<li>小节线：<code>|</code>，在一张谱中有：<code>小节 | 小节 | 小节 | 小节</code>，歌曲就是一个个小节构成的，只要拍号不变，歌曲里所有小节的时值都是相等的<br>每个小节中的拍数固定(和是4拍即可)，比如以下各个小节都是4拍：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64171efda682492fcc48d89b.jpg" style="zoom:60%" /></li>
+<li>再来个错误示范：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64171f3da682492fcc497bb7.jpg" style="zoom:30%" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>常见的拍号还有：3&#x2F;4、2&#x2F;4、3&#x2F;8、6&#x2F;8等等</p>
+</li>
+</ul>
+<h4 id="1-5-拍号的强弱"><a href="#1-5-拍号的强弱" class="headerlink" title="1.5 拍号的强弱"></a>1.5 拍号的强弱</h4><p>拍子强弱规律（不是死板的）：</p>
+<ul>
+<li>2拍子：<font color=red>强</font>弱 <font color=red>强</font>弱 <font color=red>强</font>弱 <font color=red>强</font>弱</li>
+<li>3拍子：<font color=red>强</font>弱弱 <font color=red>强</font>弱弱 <font color=red>强</font>弱弱</li>
+<li>4拍子：<font color=red>强</font>弱<font color=blue>次强</font>弱 <font color=red>强</font>弱<font color=blue>次强</font>弱</li>
+<li>6拍子：<font color=red>强</font>弱弱<font color=blue>次强</font>弱弱 <font color=red>强</font>弱弱<font color=blue>次强</font>弱弱</li>
+</ul>
+<h4 id="1-6-歌曲速度-Beat-Per-Minute-BPM"><a href="#1-6-歌曲速度-Beat-Per-Minute-BPM" class="headerlink" title="1.6 歌曲速度(Beat Per Minute, BPM)"></a>1.6 歌曲速度(Beat Per Minute, BPM)</h4><p>仅通过之前学的音符时值和节拍，并不能得出具体的时间值，我们必须知道歌曲的速度。</p>
+<p>简单来说，歌曲速度BPM&#x3D;每分钟节拍数。BPM与拍子的换算关系：</p>
+<p>$$<br>每一拍的时间(s) &#x3D; \frac{60}{\mathrm{BPM}}<br>$$</p>
+<p>例子：4&#x2F;4拍60BPM：得到$\dfrac{60}{\mathrm{BPM}} &#x3D; 1s &#x3D; 1拍 &#x3D; 4分音符$</p>
+<p>例子：6&#x2F;8拍120BPM：得到$\dfrac{60}{\mathrm{BPM}} &#x3D; 0.5s &#x3D; 1拍 &#x3D; 8分音符$</p>
+<p>通过节拍和速度，就可以算出音符的时间。</p>
+<h4 id="1-7-附点音符"><a href="#1-7-附点音符" class="headerlink" title="1.7 附点音符"></a>1.7 附点音符</h4><p>附点音符的含义是在原本音符的基础上延长一半，因此附点音符不是独立的，比如附点X分音符。可以表示为：</p>
+<p>$$<br>附点X分音符 &#x3D; X分音符 + X分音符的一半<br>$$</p>
+<p>例子：附点4分音符 &#x3D; 4分音符 + 4分音符的一半(8分音符)</p>
+<p>写法： 在音符后面加一个点：$X- \cdot \qquad X \cdot \qquad \underline{X}\cdot \qquad \cdots$</p>
+<h4 id="1-8-三连音"><a href="#1-8-三连音" class="headerlink" title="1.8 三连音"></a>1.8 三连音</h4><p>类似附点音符，不是单独存在的，也需要有一个前缀，其含义是把一个整体切分成三等分。</p>
+<p>例子：4分音符的三连音：把2分音符作为整体分成3份，3个音时值加起来等于一个4分音符时值。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64172746a682492fcc59103e.jpg" style="zoom:20%" /></center>
+
+<p>例子：8分音符的三连音：把4分音符作为整体分成3份，3个音时值加起来等于一个8分音符时值。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641727b3a682492fcc59dd0b.jpg" style="zoom:20%" /></center>
+
+<ul>
+<li><p>区分(下面例子在 4&#x2F;4 拍下)：</p>
+<ul>
+<li>8分音符三连音：打3次，实际上只有1拍的时长</li>
+<li>三个8分音符：打3次，1.5拍的时长</li>
+</ul>
+</li>
+<li><p>音与节奏的应用：</p>
+<ul>
+<li>4&#x2F;4 拍，试唱下面的音和节奏。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-9-唱名和简谱数字"><a href="#1-9-唱名和简谱数字" class="headerlink" title="1.9 唱名和简谱数字"></a>1.9 唱名和简谱数字</h4><p>简谱数字：1 2 3 4 5 6 7；</p>
+<p>唱名：do re mi fa sol la si</p>
+<p>音名(C D E F G A B)和简谱数字(1 2 3 4 5 6 7)不一定对等，而简谱数字(1 2 3 4 5 6 7)一定对应唱名(do re mi fa sol la si)</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64181108a682492fccbc637e.jpg" style="zoom:20%" /></center>
+
+<blockquote>
+<p>注：八度的概念<br>八度：可以先理解为钢琴键盘上的一组，音高从左边一组升到右边临近的一组。后面会涉及音程，即两个音之间的距离。</p>
+</blockquote>
+<h4 id="1-10-自然调式"><a href="#1-10-自然调式" class="headerlink" title="1.10 自然调式"></a>1.10 自然调式</h4><h5 id="1-10-1-引言"><a href="#1-10-1-引言" class="headerlink" title="1.10.1 引言"></a>1.10.1 引言</h5><p>从现在开始可以写简谱了：</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641812e4a682492fccc10ab1.jpg" style="zoom:30%" /></center>
+
+<p>我们知道1 3对应唱名的do mi，但不知道对应到钢琴键盘上哪个白键(之前说过了音名和简谱数字不对等)，那简谱就需要补充一个信息，即1是几，比如<code>1=C</code>。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6418135aa682492fccc23729.jpg" style="zoom:40%" /></center>
+
+<h5 id="1-10-2-调式"><a href="#1-10-2-调式" class="headerlink" title="1.10.2 调式"></a>1.10.2 调式</h5><p>钢琴一组有12个键，对应12个调式。</p>
+<p><code>1=C</code>传递出的另一个信息是调式；调式有很多，这里只涉及自然调式；自然调式有大小分；本部分只讲最常见的自然大调和自然小调。</p>
+<h5 id="1-10-3-自然大调"><a href="#1-10-3-自然大调" class="headerlink" title="1.10.3 自然大调"></a>1.10.3 自然大调</h5><ul>
+<li><strong>自然大调(白键)：</strong><ul>
+<li><code>1=C</code>传递的信息：“C自然大调”，即：<code>1=C</code> <code>2=D</code> <code>3=E</code> <code>4=F</code> <code>5=G</code> <code>6=A</code> <code>7=B</code>；</li>
+<li>“C自然大调”音阶排列规律：全 全 半 全 全 全 半</li>
+<li>C大调：C D E F G A B C</li>
+<li>G大调：G A B C D E #F G</li>
+<li>D大调：D E #F G A B #C D</li>
+</ul>
+</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641815f6a682492fccc82064.jpg" style="zoom:30%" /></center>
+
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641817d5a682492fcccc4c1c.jpg" style="zoom:30%" /></center>
+
+<blockquote>
+<p> 注意一个小问题，G大调中这个黑键为啥叫<code>#F</code>不叫<code>bG</code>：因为调式内的7个音名都要出现，并且要按顺序出现。如果黑键是<code>bG</code>，那么整个调式就没有<code>F</code>这个音名了。</p>
+</blockquote>
+<ul>
+<li><strong>自然大调(黑键)：</strong><ul>
+<li>一个问题：黑键没有自己的音名，那么从黑键出发的调式应该用哪个音名？原则来讲都可以，一般用降调来表示，此时全局更简洁。</li>
+<li>下面的例子同样遵守：全 全 半 全 全 全 半 的音阶规律。</li>
+</ul>
+</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64181908a682492fccced439.jpg" style="zoom:20%" /></center>
+
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6418195aa682492fcccf8213.jpg" style="zoom:20%" /></center>
+
+<h5 id="1-10-4-自然小调"><a href="#1-10-4-自然小调" class="headerlink" title="1.10.4 自然小调"></a>1.10.4 自然小调</h5><p>小调的音阶唱名是：<code>la</code> <code>si</code> <code>do</code> <code>re</code> <code>mi</code> <code>fa</code> <code>sol</code>，对应简谱是：<code>6</code> <code>7</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code>。</p>
+<p>A小调的音名：A B C D E F G，刚好落在白键上，借助它可以推理一下音阶排列规律；</p>
+<p>音阶排列规律：全 半 全 全 半 全 全；</p>
+<p>D小调：D E F G A bB C</p>
+<blockquote>
+<p>也可以利用“关系大小调” (平行大小调)来帮助记忆：C大调和A小调就是关系大小调。（这里就不详细展开了，直接记住自然小调音阶排列规律吧）。</p>
+</blockquote>
+<h5 id="1-10-5-大小调区别"><a href="#1-10-5-大小调区别" class="headerlink" title="1.10.5 大小调区别"></a>1.10.5 大小调区别</h5><p>一般区别（但不绝对，小调也可以写激昂的曲子，甚至洗脑神曲，比如《忐忑》）：</p>
+<ul>
+<li>小调：暗淡&#x2F;忧伤</li>
+<li>大调：欢快&#x2F;明朗</li>
+</ul>
+<h4 id="1-11-音程"><a href="#1-11-音程" class="headerlink" title="1.11 音程"></a>1.11 音程</h4><h5 id="1-11-1-音程基本概念"><a href="#1-11-1-音程基本概念" class="headerlink" title="1.11.1 音程基本概念"></a>1.11.1 音程基本概念</h5><p>两个音之间的距离，或者叫 “度”，有几个白键就是多少度(包括自身)。</p>
+<p>举例：</p>
+<ul>
+<li>C -&gt; A：是6度（包括他们自身的白键数）；</li>
+<li>E -&gt; B：5度</li>
+<li>C# -&gt; E：3度（对边缘的黑键，需要还原成白键再来数总的白键数，本例中<code>#C</code>还原成<code>C</code>，C-&gt;E是3度）</li>
+<li>bD -&gt; E：2度（虽然<code>#C</code>就是<code>bD</code>，但 “还原” 这个行为就是去掉升降号，本例中<code>bD</code>还原成<code>D</code>，D-&gt;E是3度）</li>
+</ul>
+<h5 id="1-11-2-音程的属性"><a href="#1-11-2-音程的属性" class="headerlink" title="1.11.2 音程的属性"></a>1.11.2 音程的属性</h5><p>C-&gt;E 和 #C-&gt;E都是 3 度，所以单说音程无法描述两个音的距离。所以音程，分为 纯&#x2F;大&#x2F;小&#x2F;减&#x2F;倍减&#x2F;增&#x2F;倍增。</p>
+<p>在几度前要加上一个属性，1、4、5、8度之前加一个“纯”，2、3、6、7度之前加一个“大”。即<code>1、2、3、4、5、6、7、8度</code>对应<code>纯 大 大 纯 大 大 纯</code></p>
+<p>例子(此例仅使用于以C为中心到其余八度)：C-&gt;C：纯一度；C-&gt;D：大二度；C-&gt;E：大三度；C-&gt;F：纯四度；C-&gt;G：纯五度；C-&gt;A：大六度；C-&gt;B：大七度；C-&gt;高音C：纯八度。</p>
+<blockquote>
+<p>注意：纯一度和纯八度比较特殊。纯一度理论来讲不存在，因为就是它本身，C-&gt;C没有音程的存在。纯八度和纯一度差不多，都是C-&gt;C，只是这个高了八度。</p>
+</blockquote>
+<blockquote>
+<p>出去上面特殊的纯一度和纯八度，剩下的只要记住从C到八度内的任何一个键，4、5度前为“纯”，2、3、6、7度前为“大”。</p>
+</blockquote>
+<p>把黑白键看作是一个一个的格子(实际上“格子”就代表“半音”)，那么C-&gt;F为纯四度要走几个格子呢？如下图所示，要走5个格子(注意<font color = blue>数格子和数白键不同，数格子第一个键不用数</font>)。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641845c4a682492fcc3ecaee.jpg" style="zoom:20%" /></center>
+
+<p>再比如C-&gt;D为大二度，需要走2个格子。</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6418494ba682492fcc487036.jpg" style="zoom:20%" /></center>
+
+<p>总是，可以简单总结为下图：</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641849b8a682492fcc494c2f.jpg" style="zoom:50%" /></center>
+
+<p>得到上面的结论后，我们再来考察几个例子。</p>
+<p>例子：C-&gt;#F：首先#F还原到F，从C到F有4个白键，所以C-&gt;#F为4度，但是它不是纯四度，因为由上面的总结图可知纯四度走的是5个格子，而C-&gt;#F要走6个格子，因此<code>C-&gt;#F</code>为<code>增4度</code>。</p>
+<p>下面是纯&#x2F;大X度的几个拓展对应的公式：</p>
+<p>$$<br>纯X度格子数+1 \Longrightarrow 增X度 \qquad 大X度格子数+1 \Longrightarrow 增X度<br>$$</p>
+<p>$$<br>纯X度格子数+2 \Longrightarrow 倍增X度 \qquad 大X度格子数+2 \Longrightarrow 倍增X度<br>$$</p>
+<p>$$<br>纯X度格子数-1 \Longrightarrow 减X度 \qquad 大X度格子数-1 \Longrightarrow 小X度<br>$$</p>
+<p>$$<br>纯X度格子数-2 \Longrightarrow 倍减X度 \qquad 小X度格子数-1 \Longrightarrow 减X度<br>$$</p>
+<p>$$<br>\qquad \qquad \qquad \qquad \qquad \qquad \qquad 小X度格子数-2 \Longrightarrow 倍减X度<br>$$</p>
+<table><td bgcolor=AntiqueWhite><font size="3">
+🎵 也就是可分为2个步骤：<br>
+STEP ONE：先通过数白键个数确定是几度；<br>
+STEP TWO：再数格子数，然后根据上面的公式判断是增/倍增/减/倍减几度。
+</font></td></table>
+
+<p>例子：C-&gt;bF为减四度；C-&gt;#E为增三度；F-&gt;bB为纯四度；#C-&gt;bB为减六度；</p>
+<p>最后一个特殊例子：C-&gt;#B为减二度。这两个键虽然是一个键，但是它们之间有音程。</p>
+<blockquote>
+<p>除了数格子的方式，有时间也可以去了解“音数”的概念。</p>
+</blockquote>
+<h4 id="1-12-音的乐名"><a href="#1-12-音的乐名" class="headerlink" title="1.12 音的乐名"></a>1.12 音的乐名</h4><table>
+<thead>
+<tr>
+<th align="center">乐名</th>
+<th align="center">主音</th>
+<th align="center">上主音</th>
+<th align="center">中音</th>
+<th align="center">下属音</th>
+<th align="center">属音</th>
+<th align="center">下中音</th>
+<th align="center">导音</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>音名</strong></td>
+<td align="center">C</td>
+<td align="center">D</td>
+<td align="center">E</td>
+<td align="center">F</td>
+<td align="center">G</td>
+<td align="center">A</td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center"><strong>唱名</strong></td>
+<td align="center">do</td>
+<td align="center">re</td>
+<td align="center">mi</td>
+<td align="center">fa</td>
+<td align="center">sol</td>
+<td align="center">la</td>
+<td align="center">xi</td>
+</tr>
+<tr>
+<td align="center"><strong>简谱</strong></td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+</tr>
+</tbody></table>
+<p>其中：主音、下属音、属音构成的和弦分别是主音和弦、下属音和弦、属音和弦。</p>
+<h4 id="1-13-和弦"><a href="#1-13-和弦" class="headerlink" title="1.13 和弦"></a>1.13 和弦</h4><p>和弦：三个及三个以上不同音构成的。</p>
+<h5 id="1-13-1-三和弦"><a href="#1-13-1-三和弦" class="headerlink" title="1.13.1 三和弦"></a>1.13.1 三和弦</h5><p>三和弦：三个音按三度关系叠加的和弦，是最基本的和弦。</p>
+<ul>
+<li>三个音：<ul>
+<li>根音：很重要，它决定了和弦的本质，根音是什么那就是什么和弦，在原位和弦中，根音是最低音；</li>
+<li>三音：根音上方三度音；</li>
+<li>五音：根音上方五度音。</li>
+</ul>
+</li>
+</ul>
+<p>三和弦分类：</p>
+<ul>
+<li>【大三和弦】$\Longleftrightarrow$大三度+小三度：根音 –大三度-&gt; 三音 –小三度-&gt; 五音，例如：</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64185567a682492fcc62dcf0.jpg" style="zoom:40%" /></center>
+
+<ul>
+<li>【小三和弦】$\Longleftrightarrow$小三度+大三度：根音 –小三度-&gt; 三音 –大三度-&gt; 五音，例如：</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/641855afa682492fcc6360a4.jpg" style="zoom:40%" /></center>
+
+<ul>
+<li>【减三和弦】$\Longleftrightarrow$：根音 –小三度-&gt; 三音 –小三度-&gt; 五音</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64185620a682492fcc641822.jpg" style="zoom:40%" /></center>
+
+<ul>
+<li>【增三和弦】$\Longleftrightarrow$：根音 –大三度-&gt; 三音 –大三度-&gt; 五音</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6418564ca682492fcc6466be.jpg" style="zoom:40%" /></center>
+
+<p>在C大调中有7个音名(C D E F G A B)，能分别组成7个和弦，且是本调和弦(本调和离调在D和弦中举例)：</p>
+<ul>
+<li>C E G，1 级，（大三和弦），主和弦</li>
+<li>D F A，2 级，（小三和弦）<ul>
+<li>D大三和弦：D #F A</li>
+<li>D小三和弦：D F A（只有它在 4 个和弦中没有离调音，所以选它）</li>
+<li>D减三和弦：D F bA</li>
+<li>D增三和弦：D #F #A</li>
+</ul>
+</li>
+<li>E G B，3 级，（小三和弦）</li>
+<li>F A C，4 级，（大三和弦），下属和弦</li>
+<li>G B D，5 级，（大三和弦），属和弦</li>
+<li>A C E，6 级，（小三和弦）</li>
+<li>B D F，7 级，（减三和弦）</li>
+</ul>
+<h5 id="1-13-2-七和弦"><a href="#1-13-2-七和弦" class="headerlink" title="1.13.2 七和弦"></a>1.13.2 七和弦</h5><p>七和弦：由4个音组成(注意不是7个音)，按三度关系叠加的和弦。</p>
+<ul>
+<li>四个音：<ul>
+<li>根音：最低音（原位和弦）</li>
+<li>三音：根音上方三度音</li>
+<li>五音：根音上方五度音</li>
+<li>七音</li>
+</ul>
+</li>
+</ul>
+<p>七和弦分类：</p>
+<ul>
+<li>【大七和弦】$\Longleftrightarrow$ 大三和弦 + 大三度</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6418580ba682492fcc67a223.jpg" style="zoom:40%" /></center>
+
+<ul>
+<li>【大小七和弦】$\Longleftrightarrow$ 大三和弦 + 小三度<ul>
+<li>如果大小七和弦里的根音是这个调式的属音，这个大小七和弦可以叫做【属七和弦】。<ul>
+<li>比如 C7 和弦在 F 调中是属七和弦；</li>
+<li>比如 G7 和弦在 C 调中是属七和弦。</li>
+</ul>
+</li>
+<li>每个调只有一个 “属音”，所以只有一个 “属七和弦”，其他的都叫“大小七和弦”</li>
+<li>一个调式里，除了“属七和弦”，其他“大小七和弦”都有离调音(7 音)</li>
+</ul>
+</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6418584da682492fcc681858.jpg" style="zoom:40%" /></center>
+
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/6418599ca682492fcc6b34b1.jpg" style="zoom:35%" /></center>
+
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64185a82a682492fcc6d906a.jpg" style="zoom:36%" /></center>
+
+<ul>
+<li>【小七和弦】$\Longleftrightarrow$ 小三和弦 + 小三度</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64185b0fa682492fcc6e9543.jpg" style="zoom:25%" /></center>
+
+<ul>
+<li>【小大七和弦】$\Longleftrightarrow$ 小三和弦 + 大三度</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64185bf2a682492fcc7031dc.jpg" style="zoom:25%" /></center>
+
+<ul>
+<li>【减七和弦】$\Longleftrightarrow$ 减三和弦 + 小三度</li>
+</ul>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64185c4ca682492fcc70dea2.jpg" style="zoom:25%" /></center>
+
+<p>【半减七和弦】$\Longleftrightarrow$ 减三和弦 + 大三度</p>
+<center><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/64185cb6a682492fcc71932e.jpg" style="zoom:25%" /></center>
+
+<hr>
+<hr>
+<p>参考资料1：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c82de692f6bb">钢琴键盘及乐理入门</a><br>参考资料2：<a target="_blank" rel="noopener" href="https://zhangt.top/MUSIC/Music-Theory/#%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86">乐理&#x2F;吉他-学习笔记</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">君恒</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/19/Basic-music-theory/">http://example.com/2023/03/19/Basic-music-theory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">君恒的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%B9%90%E7%90%86/">乐理</a><a class="post-meta__tags" href="/tags/%E9%80%9F%E6%88%90%E8%AF%BE/">速成课</a><a class="post-meta__tags" href="/tags/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">基本概念</a></div><div class="post-share"><div class="social-share" data-image="https://pic1.imgdb.cn/item/67a21b31d0e0a243d4fbd285.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2022/12/13/yincangwenzhang/" title="隐藏博客测试"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/6725e095d29ded1a8c7b97b9.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">隐藏博客测试</div></div><div class="info-2"><div class="info-item-1">日记，密码 </div></div></div></a><a class="pagination-related" href="/2023/09/27/Economics-crash-course/" title="Economics-crash-course"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a21a4ad0e0a243d4fbd26d.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Economics-crash-course</div></div><div class="info-2"><div class="info-item-1">1 经济学简介1.1 什么是经济学经济学不是研究金钱和致富的科学，尽管理解经济学可以帮助你，经济学研究的不是股票市场，经济学是研究人与决策的科学，著名的经济学家阿尔弗雷德·马歌尔把经济学定义为：在日常生活中，研究人，关注他如何获得收入，如何花钱，因此，经济学一方面是研究财富的科学，另一方面是研究人。 【合集】10分钟速成课：经济学【预告+全35集+花絮】 2 基金2.1 基金的基本概念和分类2.1.1 股票与债券基金最常见的2种投资品类：“股票”和“债券”。 （一）什么是债券 债券是发行方为筹集资金发行的，在约定时间支付一定比例的利息，并在到期时偿还本金的一种有价证券。  小贴士：欠条属于证券吗? - 知乎、三分钟金融小知识：债券 -...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/09/27/Economics-crash-course/" title="Economics-crash-course"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a21a4ad0e0a243d4fbd26d.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-27</div><div class="info-item-2">Economics-crash-course</div></div><div class="info-2"><div class="info-item-1">1 经济学简介1.1 什么是经济学经济学不是研究金钱和致富的科学，尽管理解经济学可以帮助你，经济学研究的不是股票市场，经济学是研究人与决策的科学，著名的经济学家阿尔弗雷德·马歌尔把经济学定义为：在日常生活中，研究人，关注他如何获得收入，如何花钱，因此，经济学一方面是研究财富的科学，另一方面是研究人。 【合集】10分钟速成课：经济学【预告+全35集+花絮】 2 基金2.1 基金的基本概念和分类2.1.1 股票与债券基金最常见的2种投资品类：“股票”和“债券”。 （一）什么是债券 债券是发行方为筹集资金发行的，在约定时间支付一定比例的利息，并在到期时偿还本金的一种有价证券。  小贴士：欠条属于证券吗? - 知乎、三分钟金融小知识：债券 -...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">君恒</div><div class="author-info-description">此人很神秘</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wang-jun-heng"><i class="fab fa-github"></i><span>Follow My Github</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/wang-jun-heng" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:junheng.wang@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到君恒的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9F%B3%E5%90%8D%E4%B8%8E%E9%92%A2%E7%90%B4%E9%94%AE%E7%9B%98"><span class="toc-text">1 音名与钢琴键盘</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E9%92%A2%E7%90%B4%E9%94%AE%E7%9B%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B8%83%E5%B1%80"><span class="toc-text">1.1 钢琴键盘的基本布局</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E9%9F%B3%E5%90%8D"><span class="toc-text">1.2 音名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E9%9F%B3%E7%AC%A6%E6%97%B6%E5%80%BC"><span class="toc-text">1.3 音符时值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%8B%8D%E5%8F%B7"><span class="toc-text">1.4 拍号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E6%8B%8D%E5%8F%B7%E7%9A%84%E5%BC%BA%E5%BC%B1"><span class="toc-text">1.5 拍号的强弱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-%E6%AD%8C%E6%9B%B2%E9%80%9F%E5%BA%A6-Beat-Per-Minute-BPM"><span class="toc-text">1.6 歌曲速度(Beat Per Minute, BPM)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-7-%E9%99%84%E7%82%B9%E9%9F%B3%E7%AC%A6"><span class="toc-text">1.7 附点音符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-%E4%B8%89%E8%BF%9E%E9%9F%B3"><span class="toc-text">1.8 三连音</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-%E5%94%B1%E5%90%8D%E5%92%8C%E7%AE%80%E8%B0%B1%E6%95%B0%E5%AD%97"><span class="toc-text">1.9 唱名和简谱数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-10-%E8%87%AA%E7%84%B6%E8%B0%83%E5%BC%8F"><span class="toc-text">1.10 自然调式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-10-1-%E5%BC%95%E8%A8%80"><span class="toc-text">1.10.1 引言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-10-2-%E8%B0%83%E5%BC%8F"><span class="toc-text">1.10.2 调式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-10-3-%E8%87%AA%E7%84%B6%E5%A4%A7%E8%B0%83"><span class="toc-text">1.10.3 自然大调</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-10-4-%E8%87%AA%E7%84%B6%E5%B0%8F%E8%B0%83"><span class="toc-text">1.10.4 自然小调</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-10-5-%E5%A4%A7%E5%B0%8F%E8%B0%83%E5%8C%BA%E5%88%AB"><span class="toc-text">1.10.5 大小调区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-11-%E9%9F%B3%E7%A8%8B"><span class="toc-text">1.11 音程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-11-1-%E9%9F%B3%E7%A8%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">1.11.1 音程基本概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-11-2-%E9%9F%B3%E7%A8%8B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">1.11.2 音程的属性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-12-%E9%9F%B3%E7%9A%84%E4%B9%90%E5%90%8D"><span class="toc-text">1.12 音的乐名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-13-%E5%92%8C%E5%BC%A6"><span class="toc-text">1.13 和弦</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-13-1-%E4%B8%89%E5%92%8C%E5%BC%A6"><span class="toc-text">1.13.1 三和弦</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-13-2-%E4%B8%83%E5%92%8C%E5%BC%A6"><span class="toc-text">1.13.2 七和弦</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/02/04/Hexo-blog-building/" title="Hexo+Github个人博客搭建"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a2133fd0e0a243d4fbd1c6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+Github个人博客搭建"/></a><div class="content"><a class="title" href="/2025/02/04/Hexo-blog-building/" title="Hexo+Github个人博客搭建">Hexo+Github个人博客搭建</a><time datetime="2025-02-04T06:53:08.000Z" title="发表于 2025-02-04 14:53:08">2025-02-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/27/Economics-crash-course/" title="Economics-crash-course"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a21a4ad0e0a243d4fbd26d.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Economics-crash-course"/></a><div class="content"><a class="title" href="/2023/09/27/Economics-crash-course/" title="Economics-crash-course">Economics-crash-course</a><time datetime="2023-09-27T02:33:00.000Z" title="发表于 2023-09-27 10:33:00">2023-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/19/Basic-music-theory/" title="基础乐理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a21b31d0e0a243d4fbd285.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基础乐理"/></a><div class="content"><a class="title" href="/2023/03/19/Basic-music-theory/" title="基础乐理">基础乐理</a><time datetime="2023-03-19T12:08:02.000Z" title="发表于 2023-03-19 20:08:02">2023-03-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/wojiaowangdaniu/" title="编码规范"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/6725e095d29ded1a8c7b97b9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编码规范"/></a><div class="content"><a class="title" href="/2022/12/13/wojiaowangdaniu/" title="编码规范">编码规范</a><time datetime="2022-12-13T03:53:08.000Z" title="发表于 2022-12-13 11:53:08">2022-12-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/13/yincangwenzhang/" title="隐藏博客测试"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/6725e095d29ded1a8c7b97b9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="隐藏博客测试"/></a><div class="content"><a class="title" href="/2022/12/13/yincangwenzhang/" title="隐藏博客测试">隐藏博客测试</a><time datetime="2022-12-13T03:53:08.000Z" title="发表于 2022-12-13 11:53:08">2022-12-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 君恒</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="请输入搜索内容" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
