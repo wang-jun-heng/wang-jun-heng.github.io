@@ -17,6 +17,37 @@
     
     
     <entry>
+      <title>隐藏博客测试</title>
+      <link href="/2022/12/13/yincangwenzhang/"/>
+      <url>/2022/12/13/yincangwenzhang/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="a90c660ad4d55ec12ad27e450179f42431a2c62981a1a19346128c4a1f4bd4a3">982bb7f6a25ee69dd4a8465da01cef2204fd36c62ab52c3bb6f8355856276690d0c0763ca1e1a3c4a56e2757857bf2f3</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习提升 </category>
+          
+          <category> 日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常 </tag>
+            
+            <tag> 记录 </tag>
+            
+            <tag> 日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>编码规范</title>
       <link href="/2022/12/13/wojiaowangdaniu/"/>
       <url>/2022/12/13/wojiaowangdaniu/</url>
@@ -44,37 +75,19 @@
     </entry>
     
     
+  
+  
+    
     
     <entry>
-      <title>隐藏博客测试</title>
-      <link href="/2022/12/13/yincangwenzhang/"/>
-      <url>/2022/12/13/yincangwenzhang/</url>
+      <title>友情链接</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[<p>日记</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习提升 </category>
-          
-          <category> 日记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 日常 </tag>
-            
-            <tag> 记录 </tag>
-            
-        </tags>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
-    
-  
-  
     
     
     <entry>
@@ -93,18 +106,7 @@
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：<a href="mailto:&#106;&#117;&#110;&#x68;&#101;&#x6e;&#x67;&#119;&#x61;&#110;&#103;&#x72;&#x69;&#122;&#x68;&#x61;&#x6f;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#111;&#109;">junhengwangrizhao@gmail.com</a></p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>友情链接</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：<a href="mailto:&#x6a;&#x75;&#110;&#x68;&#x65;&#110;&#x67;&#x77;&#x61;&#x6e;&#x67;&#114;&#x69;&#x7a;&#x68;&#x61;&#x6f;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;">junhengwangrizhao@gmail.com</a></p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
       
     </entry>
     
