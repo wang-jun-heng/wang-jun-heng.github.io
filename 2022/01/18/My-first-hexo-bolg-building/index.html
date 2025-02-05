@@ -1,6 +1,97 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
 <link rel="stylesheet" href="/css/bilicard.css">
-<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>个人博客搭建历程 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="〇. 简要介绍本博客的搭建不需要什么技术，而且自己截止到当前时间对Git和Github的使用也刚学，所以只是参考网上博客和B站的教学视频来做的。 一. 部署Github Pages在自己的Github上创建一个新的Repositories，注意命名规则是——Github账号名.github.io。 二. 安装Hexo1. 插入注解(1) 常见的博客搭建方法据我目前所知，搭建博客总体上分有两种方法：">
+<style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>个人博客搭建历程 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="〇. 简要介绍本博客的搭建不需要什么技术，而且自己截止到当前时间对Git和Github的使用也刚学，所以只是参考网上博客和B站的教学视频来做的。 一. 部署Github Pages在自己的Github上创建一个新的Repositories，注意命名规则是——Github账号名.github.io。 二. 安装Hexo1. 插入注解(1) 常见的博客搭建方法据我目前所知，搭建博客总体上分有两种方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="个人博客搭建历程">
 <meta property="og:url" content="http://example.com/2022/01/18/My-first-hexo-bolg-building/index.html">

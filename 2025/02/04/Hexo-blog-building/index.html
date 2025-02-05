@@ -1,6 +1,97 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
 <link rel="stylesheet" href="/css/bilicard.css">
-<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo+Github个人博客搭建 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="Hexo的搭建过程及遇到的问题">
+<style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo+Github个人博客搭建 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="Hexo的搭建过程及遇到的问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Github个人博客搭建">
 <meta property="og:url" content="http://example.com/2025/02/04/Hexo-blog-building/index.html">
@@ -9,7 +100,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic1.imgdb.cn/item/67a2133fd0e0a243d4fbd1c6.png">
 <meta property="article:published_time" content="2025-02-04T06:53:08.000Z">
-<meta property="article:modified_time" content="2025-02-05T12:09:45.300Z">
+<meta property="article:modified_time" content="2025-02-05T12:17:54.906Z">
 <meta property="article:author" content="君恒">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="博客搭建">
@@ -21,7 +112,7 @@
   "url": "http://example.com/2025/02/04/Hexo-blog-building/",
   "image": "https://pic1.imgdb.cn/item/67a2133fd0e0a243d4fbd1c6.png",
   "datePublished": "2025-02-04T06:53:08.000Z",
-  "dateModified": "2025-02-05T12:09:45.300Z",
+  "dateModified": "2025-02-05T12:17:54.906Z",
   "author": [
     {
       "@type": "Person",
@@ -162,7 +253,7 @@
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://pic1.imgdb.cn/item/67a2133fd0e0a243d4fbd1c6.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">君恒的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo+Github个人博客搭建</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Hexo+Github个人博客搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-04T06:53:08.000Z" title="发表于 2025-02-04 14:53:08">2025-02-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-05T12:09:45.300Z" title="更新于 2025-02-05 20:09:45">2025-02-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/">我的生活记录</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E7%88%B1%E5%A5%BD%E4%B8%8E%E6%8F%90%E5%8D%87/">爱好与提升</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E7%88%B1%E5%A5%BD%E4%B8%8E%E6%8F%90%E5%8D%87/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">HEXO博客搭建</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">707</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-05 20:09:45&quot;}" hidden></div><h1 id="1-博客参考教程"><a href="#1-博客参考教程" class="headerlink" title="1 博客参考教程"></a>1 博客参考教程</h1><p>本博客的制作重点参考了两个视频教程，地址如下：</p>
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://pic1.imgdb.cn/item/67a2133fd0e0a243d4fbd1c6.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">君恒的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo+Github个人博客搭建</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Hexo+Github个人博客搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-04T06:53:08.000Z" title="发表于 2025-02-04 14:53:08">2025-02-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-05T12:17:54.906Z" title="更新于 2025-02-05 20:17:54">2025-02-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/">我的生活记录</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E7%88%B1%E5%A5%BD%E4%B8%8E%E6%8F%90%E5%8D%87/">爱好与提升</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E7%88%B1%E5%A5%BD%E4%B8%8E%E6%8F%90%E5%8D%87/HEXO%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">HEXO博客搭建</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">713</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-05 20:17:54&quot;}" hidden></div><h1 id="1-博客参考教程"><a href="#1-博客参考教程" class="headerlink" title="1 博客参考教程"></a>1 博客参考教程</h1><p>本博客的制作重点参考了两个视频教程，地址如下：</p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Hi421a7K4/?share_source=copy_web&amp;vd_source=5cb8e8e385b900f1a132ca50a9d46ab5">【零基础搭建个人博客！手把手教你用Hexo+GitHub+Zeabur打造属于你的网站!】- 哔哩哔哩</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JP411P7gc/?share_source=copy_web&amp;vd_source=5cb8e8e385b900f1a132ca50a9d46ab5">【第3期：Butterfly主题的基础配置】- 哔哩哔哩</a></p>
 <h1 id="2-一些插件和问题"><a href="#2-一些插件和问题" class="headerlink" title="2 一些插件和问题"></a>2 一些插件和问题</h1><h2 id="2-1-官方的主题"><a href="#2-1-官方的主题" class="headerlink" title="2.1 官方的主题"></a>2.1 官方的主题</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">Themes | Hexo</a> </p>
@@ -178,7 +269,7 @@
 <p>请参考3：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranxi169/p/16711700.html">Hexo github 博客无法显示从其他博客（博客园）索引的图片 - 博客园</a></p>
 <p>请参考4：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1952245">解决 hexo 博客的图片链接失效问题 - 腾讯云</a></p>
 <h2 id="2-6-豆瓣、B站卡片超链接"><a href="#2-6-豆瓣、B站卡片超链接" class="headerlink" title="2.6 豆瓣、B站卡片超链接"></a>2.6 豆瓣、B站卡片超链接</h2><p>请参考1：<a target="_blank" rel="noopener" href="https://dyphire.github.io/undefined/7e42bc76">Hexo 上的豆瓣、哔哩哔哩和 Steam 插件</a></p>
-<p>请参考2：<a target="_blank" rel="noopener" href="https://kaidashao1.github.io/2/">博客搭建日记</a></p>
+<p>请参考2：<a target="_blank" rel="noopener" href="https://kaidashao1.github.io/2/">博客搭建日记：豆瓣、B站插件</a></p>
 <h1 id="3-一些命令和解释"><a href="#3-一些命令和解释" class="headerlink" title="3 一些命令和解释"></a>3 一些命令和解释</h1><ul>
 <li><code>hexo new page</code>和<code>hexo new post</code>的区别 <ul>
 <li><code>hexo new post</code>：此命令用于创建一篇新的文章。在Hexo中，文章（post）是博客的主要内容，通常按照时间顺序排列显示。当你执行<code>hexo new post</code>命令时，Hexo会在<code>source/_posts</code>目录下创建一个新的Markdown文件，这个文件用于编写你的文章内容。文章可以使用主题提供的布局和样式进行渲染，并显示在博客的主页或文章列表。</li>

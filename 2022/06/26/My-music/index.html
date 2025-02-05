@@ -1,6 +1,97 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
 <link rel="stylesheet" href="/css/bilicard.css">
-<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>我的音乐 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="1 中文歌曲1.1 按人名划分 邓丽君 《甜蜜蜜》、《月亮代表我的心》、《我只在乎你》、《漫步人生路》、《往事只能回味》   许冠杰 《半斤八两》、《天才白痴梦》   陈百强 《偏偏喜欢你》、《今宵多珍重》   林子祥 《男儿当自强》、《敢爱敢做》、《敢爱敢做》、《谁明浪子心》   罗大佑 《光阴的故事》、《明天会更好》、《你的样子》   李宗盛 《当爱已成往事》、《鬼迷心窍》   周华健 《刀剑">
+<style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>我的音乐 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="1 中文歌曲1.1 按人名划分 邓丽君 《甜蜜蜜》、《月亮代表我的心》、《我只在乎你》、《漫步人生路》、《往事只能回味》   许冠杰 《半斤八两》、《天才白痴梦》   陈百强 《偏偏喜欢你》、《今宵多珍重》   林子祥 《男儿当自强》、《敢爱敢做》、《敢爱敢做》、《谁明浪子心》   罗大佑 《光阴的故事》、《明天会更好》、《你的样子》   李宗盛 《当爱已成往事》、《鬼迷心窍》   周华健 《刀剑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的音乐">
 <meta property="og:url" content="http://example.com/2022/06/26/My-music/index.html">

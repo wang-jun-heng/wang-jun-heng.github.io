@@ -1,6 +1,97 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
 <link rel="stylesheet" href="/css/bilicard.css">
-<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>我的观影记录 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="1 观影记录 .tg {   border-collapse: collapse;   border-spacing: 0;   width: 100%; &#x2F;* 表格宽度为100% *&#x2F;   table-layout: auto; &#x2F;* 允许表格根据内容自动调整列宽 *&#x2F; } .tg td {   border-color: black;   border-style: solid;   bord">
+<style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>我的观影记录 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="1 观影记录 .tg {   border-collapse: collapse;   border-spacing: 0;   width: 100%; &#x2F;* 表格宽度为100% *&#x2F;   table-layout: auto; &#x2F;* 允许表格根据内容自动调整列宽 *&#x2F; } .tg td {   border-color: black;   border-style: solid;   bord">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的观影记录">
 <meta property="og:url" content="http://example.com/2022/06/27/My-movie/index.html">
@@ -9,7 +100,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic1.imgdb.cn/item/67a346ccd0e0a243d4fbf804.webp">
 <meta property="article:published_time" content="2022-06-27T12:00:00.000Z">
-<meta property="article:modified_time" content="2025-02-05T12:10:31.783Z">
+<meta property="article:modified_time" content="2025-02-05T12:21:42.735Z">
 <meta property="article:author" content="君恒">
 <meta property="article:tag" content="电影">
 <meta property="article:tag" content="电视剧">
@@ -22,7 +113,7 @@
   "url": "http://example.com/2022/06/27/My-movie/",
   "image": "https://pic1.imgdb.cn/item/67a346ccd0e0a243d4fbf804.webp",
   "datePublished": "2022-06-27T12:00:00.000Z",
-  "dateModified": "2025-02-05T12:10:31.783Z",
+  "dateModified": "2025-02-05T12:21:42.735Z",
   "author": [
     {
       "@type": "Person",
@@ -163,7 +254,7 @@
   isHighlightShrink: false,
   isToc: true,
   pageType: 'post'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://pic1.imgdb.cn/item/67a34791d0e0a243d4fbf815.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">君恒的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">我的观影记录</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">我的观影记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-27T12:00:00.000Z" title="发表于 2022-06-27 20:00:00">2022-06-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-05T12:10:31.783Z" title="更新于 2025-02-05 20:10:31">2025-02-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/">我的生活记录</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E4%B9%A6%E9%9F%B3%E5%BD%B1/">书音影</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">13k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>39分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-05 20:10:31&quot;}" hidden></div><h1 id="1-观影记录"><a href="#1-观影记录" class="headerlink" title="1 观影记录"></a>1 观影记录</h1><style type="text/css">
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://pic1.imgdb.cn/item/67a34791d0e0a243d4fbf815.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">君恒的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">我的观影记录</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">我的观影记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-27T12:00:00.000Z" title="发表于 2022-06-27 20:00:00">2022-06-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-05T12:21:42.735Z" title="更新于 2025-02-05 20:21:42">2025-02-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/">我的生活记录</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/%E4%B9%A6%E9%9F%B3%E5%BD%B1/">书音影</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">13k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>39分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-05 20:21:42&quot;}" hidden></div><h1 id="1-观影记录"><a href="#1-观影记录" class="headerlink" title="1 观影记录"></a>1 观影记录</h1><style type="text/css">
 .tg {
   border-collapse: collapse;
   border-spacing: 0;
@@ -403,10 +494,33 @@
 </span> </td> </tr> </table>
 
 <p>链接1：<a href="https://www.douban.com/doulist/44150794" target="_blank"  style="color: #007bff; text-decoration: none; font-weight: bold; transition: color 0.3s ease;"> 国漫崛起（7分至7分以上）- 豆瓣 </a> </p>
-<h1 id="2-观影影评"><a href="#2-观影影评" class="headerlink" title="2 观影影评"></a>2 观影影评</h1><h2 id="2-1-鬼子来了【22-02-11】"><a href="#2-1-鬼子来了【22-02-11】" class="headerlink" title="2.1 鬼子来了【22-02-11】"></a>2.1 鬼子来了【22-02-11】</h2><hr>
-<p>鬼子来了 - 豆瓣链接<br><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/1291858/">https://movie.douban.com/subject/1291858/</a></p>
-<hr>
-<div class="bvideo"><a href="//www.bilibili.com/video/BV1Wx41157LP" target="_blank">
+<h1 id="2-观影影评"><a href="#2-观影影评" class="headerlink" title="2 观影影评"></a>2 观影影评</h1><h2 id="2-1-鬼子来了【22-02-11】"><a href="#2-1-鬼子来了【22-02-11】" class="headerlink" title="2.1 鬼子来了【22-02-11】"></a>2.1 鬼子来了【22-02-11】</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>豆瓣</th>
+<th>B站</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="douban-card-block">
+    <a class="douban-card" target="_blank" rel="noopener" href="https://movie.douban.com/subject/1291858">
+        <div bg-lazy class="douban-card-bgimg" style="background-image: url('https://images.weserv.nl/?url=https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2553104888.jpg');"></div>
+        <div class="douban-card-left">
+            <div bg-lazy class="douban-card-img" style="background-image: url('https://images.weserv.nl/?url=https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2553104888.jpg');"></div>
+            <div class="douban-card-status">灯影绰约</div>
+        </div>
+        <div class="douban-card-right">
+            <div class="douban-card-item"><span>电影名: </span><strong>鬼子来了(2000)</strong></div>
+            <div class="douban-card-item"><span>导演: </span><span>姜文</span></div>
+            <div class="douban-card-item"><span>主演: </span><span>姜文/香川照之</span></div>
+            <div class="douban-card-item"><span>上映时间: </span><span>2000-05-12(戛纳电影节)</span></div>
+            <div class="douban-card-item"><span>评分: </span><span>9.3</span></div>
+        </div>
+    </a>
+</div></td>
+<td><div class="bvideo"><a href="//www.bilibili.com/video/BV1Wx41157LP" target="_blank">
         <div class="bvideo-box">
             <div class="bvideo-cover">
                 <div class="cover-default"></div>
@@ -432,7 +546,11 @@
                 <div class="actions hide"></div>
             </div>
         </div>
-    </a></div>
+    </a></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><strong>转载影评：</strong></p>
 <p>终于看了姜文被禁止公映的《鬼子来了》，很多人都将这部片子的禁止公映解说为该片中绝口不提共产党抗日，自始至终未出现一个党员形象，因此而引起不满。但看了这部片子才知道决不是因为这个原因。</p>
 <p>《鬼子来了》讲的是川北抗战的故事，在那个叫挂甲台的小村落里老百姓无知的固守着自己的善良，却悲惨的被鬼子集体屠杀。而且这场大屠杀发生在日本天皇发表投降诏书之后！中国的农民是淳朴而且安于现状的，他们被诸多的势力欺压了两千年，形成的秉性却温顺贤良。可以想见，当小鬼子们没有进行烧杀戮掠的时候，老百姓虽然会心有不甘，但真的是尚不至于奋起以命相搏（并不是说老百姓就不爱国，而是在那样一个自给自足、封闭且未开化的时期里，“爱国”还是一个虚幻的理念）。片中有大量的这样的痕迹，在那个被日军牢牢把持的小地方，因为没有国军和共军的争夺而显得相对安宁，小日本对当地人进行着和平的奴役。习惯了被压迫的老百姓已经对于尊严的事情麻木了，为了生计这样的眼前利益而过分乐观的活着。小镇上唱曲的在集市上宣扬着皇道乐土，教育众人中日“八百年前是一家”，村落里老百姓见了鬼子一口一个“森塞”的叫着。固执的不肯杀人的村民们为了结果被俘的鬼子，费尽周折请刀斧手，最终得到的结论是这鬼子命不该绝。并最终同意了鬼子用人换粮的建议。</p>
@@ -449,10 +567,33 @@
 <p>原文链接：<a target="_blank" rel="noopener" href="https://movie.douban.com/review/1045537/">https://movie.douban.com/review/1045537/</a></p>
 <p>侵删</p>
 </blockquote>
-<h2 id="2-2-爆裂鼓手【22-02-15】"><a href="#2-2-爆裂鼓手【22-02-15】" class="headerlink" title="2.2 爆裂鼓手【22-02-15】"></a>2.2 爆裂鼓手【22-02-15】</h2><hr>
-<p>爆裂鼓手 - 豆瓣链接<br><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/25773932/">https://movie.douban.com/subject/25773932/</a></p>
-<hr>
-<div class="bvideo"><a href="//www.bilibili.com/video/BV1XK4y1a7gC" target="_blank">
+<h2 id="2-2-爆裂鼓手【22-02-15】"><a href="#2-2-爆裂鼓手【22-02-15】" class="headerlink" title="2.2 爆裂鼓手【22-02-15】"></a>2.2 爆裂鼓手【22-02-15】</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>豆瓣</th>
+<th>B站</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="douban-card-block">
+    <a class="douban-card" target="_blank" rel="noopener" href="https://movie.douban.com/subject/25773932">
+        <div bg-lazy class="douban-card-bgimg" style="background-image: url('https://images.weserv.nl/?url=https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2915975989.jpg');"></div>
+        <div class="douban-card-left">
+            <div bg-lazy class="douban-card-img" style="background-image: url('https://images.weserv.nl/?url=https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2915975989.jpg');"></div>
+            <div class="douban-card-status">灯影绰约</div>
+        </div>
+        <div class="douban-card-right">
+            <div class="douban-card-item"><span>电影名: </span><strong>爆裂鼓手Whiplash(2014)</strong></div>
+            <div class="douban-card-item"><span>导演: </span><span>达米恩·查泽雷</span></div>
+            <div class="douban-card-item"><span>主演: </span><span>迈尔斯·特勒/J·K·西蒙斯</span></div>
+            <div class="douban-card-item"><span>上映时间: </span><span>2024-12-06(中国大陆)</span></div>
+            <div class="douban-card-item"><span>评分: </span><span>8.6</span></div>
+        </div>
+    </a>
+</div></td>
+<td><div class="bvideo"><a href="//www.bilibili.com/video/BV1XK4y1a7gC" target="_blank">
         <div class="bvideo-box">
             <div class="bvideo-cover">
                 <div class="cover-default"></div>
@@ -478,7 +619,11 @@
                 <div class="actions hide"></div>
             </div>
         </div>
-    </a></div>
+    </a></div></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><strong>转载影评：</strong></p>
 <p>作为今年圣丹斯的获奖影片和奥斯卡热门，影片的上佳口碑主要来自于紧凑的剪辑、优质的表演和对于师徒关系非常规的刻画。诚然，影片的剪辑凌厉而准确，除结尾处有少许松懈，整部电影更像是一部动作悬疑片，节奏一再加快，冲突一再升级，影片结束，107分钟不知不觉中过去。影片对于音乐的处理也相当不马虎，体现了对于细节的重视和专业精神。</p>
 <p>然而，如果将电影解读为描绘师徒关系，以及少年经历魔鬼训练，超越极限，从而实现自我的励志电影，大概是个误会。片中鼓手和指挥从始至终是纯粹的互相利用关系。鼓手其实从未得到特殊待遇——他始终是乐队中和其他乐手一样微不足道的一员，随时被指挥予取予求，玩弄于鼓掌之间。在鼓手坦陈指挥对于乐队的虐待，间接导致指挥离职之后，酒吧相遇，看似一番肺腑之言，实际上指挥已暗暗设计陷害，如若没有鼓手最后的破釜沉舟，一个乐手的生涯就要万劫不复（影片一再强调在卡内基演出对于音乐生涯的决定性作用）。即使仇人之间，若有一丁点原则和不忍，做事尚不会如此残忍，何况师徒。</p>
