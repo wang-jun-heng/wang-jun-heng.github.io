@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>常见用电设备功率</title>
+      <link href="/2025/02/06/Power-of-electrical-equipment/"/>
+      <url>/2025/02/06/Power-of-electrical-equipment/</url>
+      
+        <content type="html"><![CDATA[<h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h1><p>本文主要是记录一下电功率的基础知识以及常见的用电设备功率。</p><h1 id="1-功率的概念"><a href="#1-功率的概念" class="headerlink" title="1 功率的概念"></a>1 功率的概念</h1><h2 id="1-1-功率介绍"><a href="#1-1-功率介绍" class="headerlink" title="1.1 功率介绍"></a>1.1 功率介绍</h2><p>‌<strong>功率是指物体在单位时间内所做的功，即功率是描述做功快慢的物理量</strong>‌。具体来说，功率是单位时间内传递或转换的能量，用来衡量体系做功的快慢。功率是一个标量，只用来衡量做功的快慢，其正负号常用来表示体系是接受外界做功还是对外做功。‌  </p><ul><li><strong>功率的定义和计算公式</strong></li></ul><p>功率的定义为：单位时间内所做的功称为功率，用$P$表示。其计算公式为：</p><script type="math/tex; mode=display">P = \dfrac{W}{t}</script><p>其中，$P$表示功率，$W$表示功，$t$表示时间。这个公式适用于各种形式的能量转化过程，无论是力学中的动能转化为势能，还是电学中的电能转化为热能或光能等‌ </p><p>此外，功率也可以通过其他公式计算，例如： $P=Fv \cos⁡ \theta$，其中，$F$表示作用力，$v$表示速度，$\theta$表示力与速度间的夹角。 </p><ul><li><strong>功率的单位和测量方法</strong></li></ul><p>功率的单位是瓦特（W），简称瓦。此外，功率还可以用马力（PS）或千瓦（kW）来表示。1马力等于0.735千瓦。测量功率的方法通常是通过测量在特定时间内所做的功或消耗的能量来计算。</p><h2 id="1-2-电功率介绍"><a href="#1-2-电功率介绍" class="headerlink" title="1.2 电功率介绍"></a>1.2 电功率介绍</h2><h3 id="1-2-1-电功率"><a href="#1-2-1-电功率" class="headerlink" title="1.2.1 电功率"></a>1.2.1 电功率</h3><p>电功率则是功率在电学领域中的具体应用，它描述的是<strong>电流在单位时间内所做的功，即电能转化的速率</strong>。电功率的计算公式有多种，其中最常见的是‌（在纯电阻电路中）：</p><script type="math/tex; mode=display">P = UI = I^2R = \dfrac{U^2}{R}</script><p>其中，$P$表示电功率，$U$表示电压，$I$表示电流，$R$表示电阻。改公式适用于不同电路条件下的电功率计算，如直流电路、交流电路等‌ 。</p><h3 id="1-2-2-用电度数-电量"><a href="#1-2-2-用电度数-电量" class="headerlink" title="1.2.2 用电度数/电量"></a>1.2.2 用电度数/电量</h3><p>用电度数，即电量，是衡量电能消耗量的单位。在中国，家庭用电常用千瓦时（kWh）作为电量的单位。<strong>1千瓦时表示功率为1千瓦的电器工作1小时所消耗的电能</strong>。换句话说，如果一个电器的功率是1千瓦，并且它工作了1小时，那么它就消耗了1千瓦时的电能，也就是1度电。 </p><h3 id="1-2-3-电功率和用电度数之间的关系"><a href="#1-2-3-电功率和用电度数之间的关系" class="headerlink" title="1.2.3 电功率和用电度数之间的关系"></a>1.2.3 电功率和用电度数之间的关系</h3><p>电功率的单位是瓦特（W）或千瓦（kW），而用电度数（电量）的单位是千瓦时（kWh），它们之间的关系可以通过如下公式来表示‌：</p><script type="math/tex; mode=display">\text{度数 = 电量(kWh) = 功率(kW) × 时间(h)}</script><p>举例1：飞利浦电灯E27的功率是50W，请计算该电灯工作一天(24h)的用电度数。</p><script type="math/tex; mode=display">\text{单位转换为kW}：\dfrac{50W}{1000} = 0.05kW \\\text{计算用电度数}：0.05kW \times 24h = 1.2 \text{度}</script><blockquote><p>PS：假设居民用电为*0.57元/千瓦时* ，则此电灯开一天花费：$1.2 \times 0.57=0.684$(元)。</p></blockquote><p>举例2：如果一个电器的功率是2千瓦，并且它工作了3小时，那么它消耗的电能就是2千瓦乘以3小时，即6千瓦时，也就是6度电。</p><h3 id="1-2-4-家庭用电功率的计算"><a href="#1-2-4-家庭用电功率的计算" class="headerlink" title="1.2.4 家庭用电功率的计算"></a>1.2.4 家庭用电功率的计算</h3><p>电路中串并联功率的计算公式是$P=UI$，无论是<strong>串联电路还是并联电路，总功率都等于各导体的电功率之和</strong>。 </p><p>一般来说，家中所有电器都是<strong>并联的</strong>，各支路电压相等，电流与功率是成正比的。我们只要统计好各个电器的功率，然后直接相加就可得到总的功率。</p><h2 id="2-常见用电器的功率"><a href="#2-常见用电器的功率" class="headerlink" title="2 常见用电器的功率"></a>2 常见用电器的功率</h2><h3 id="2-1-空调"><a href="#2-1-空调" class="headerlink" title="2.1 空调"></a>2.1 空调</h3><p>一般来说，家用空调的瓦数范围在800瓦到6000瓦之间。其中，常见的空调瓦数有1匹、1.5匹、2匹、3匹、4匹等。具体来说：</p><ul><li>1匹空调的制冷量大约为2200瓦，制热量约为2600瓦；</li><li>1.5匹空调的制冷量大约为3200瓦，制热量约为3600瓦；</li><li>2匹空调的制冷量大约为4200瓦，制热量约为4600瓦；</li><li>3匹空调的制冷量大约为5600瓦，制热量约为6200瓦；</li><li>4匹空调的制冷量大约为7200瓦，制热量约为7800瓦。 </li></ul><p>比如，以我家的空调为例，我家空调是2匹的，写此篇博客正值2025年春节期间，用于冬季制热，所以开10个小时的用电度数大概为：$4.6kW \times 10h = 46 \text{度}$，那么大概一天花费：$0.57 \times 46 \text{度} = 26.22\text{元}$。</p><p>参考链接1：<a href="https://g.pconline.com.cn/x/1692/16922315.html">一般空调是多少瓦数的 选择合适的空调瓦数方法【详解】</a></p><h3 id="2-2-笔记本电脑"><a href="#2-2-笔记本电脑" class="headerlink" title="2.2 笔记本电脑"></a>2.2 笔记本电脑</h3><p>这里就以我的笔记本电脑为例，经查看，我的笔记本充电器上标注功率为150W，虽然不一定实际如此，但就简单这么算了，充电一天的用电量为：$0.15kW \times 24h = 3.6 \text{度}$，那么大概一天花费：$0.57 \times 3.6 \text{度} = 2.052\text{元}$。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 我的生活记录 </category>
+          
+          <category> 爱好与提升 </category>
+          
+          <category> 生活小常识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 功率 </tag>
+            
+            <tag> 基础概念 </tag>
+            
+            <tag> 生活常识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo+Github个人博客搭建</title>
       <link href="/2025/02/04/Hexo-blog-building/"/>
       <url>/2025/02/04/Hexo-blog-building/</url>
@@ -311,22 +344,22 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
