@@ -24,9 +24,9 @@
       
         <tags>
             
-            <tag> Github </tag>
-            
             <tag> 学习 </tag>
+            
+            <tag> Github </tag>
             
         </tags>
       
@@ -518,9 +518,9 @@
       
         <tags>
             
-            <tag> 学习 </tag>
-            
             <tag> Git </tag>
+            
+            <tag> 学习 </tag>
             
         </tags>
       
@@ -563,6 +563,17 @@
     
     
     <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -579,17 +590,6 @@
       <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
       
     </entry>
     
