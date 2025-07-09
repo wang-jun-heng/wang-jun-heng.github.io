@@ -1,0 +1,617 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="/css/bilicard.css">
+<style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>STM32基础学习_Part1 | 君恒的博客</title><meta name="author" content="君恒"><meta name="copyright" content="君恒"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="STM32的基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM32基础学习_Part1">
+<meta property="og:url" content="http://example.com/2025/07/08/Learn-STM32-1/index.html">
+<meta property="og:site_name" content="君恒的博客">
+<meta property="og:description" content="STM32的基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png">
+<meta property="article:published_time" content="2025-07-08T07:03:40.000Z">
+<meta property="article:modified_time" content="2025-07-09T00:41:57.506Z">
+<meta property="article:author" content="君恒">
+<meta property="article:tag" content="嵌入式">
+<meta property="article:tag" content="单片机">
+<meta property="article:tag" content="STM32">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "STM32基础学习_Part1",
+  "url": "http://example.com/2025/07/08/Learn-STM32-1/",
+  "image": "https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png",
+  "datePublished": "2025-07-08T07:03:40.000Z",
+  "dateModified": "2025-07-09T00:41:57.506Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "君恒",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/butterfly-icon.png"><link rel="canonical" href="http://example.com/2025/07/08/Learn-STM32-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'STM32基础学习_Part1',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">君恒的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">STM32基础学习_Part1</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">STM32基础学习_Part1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-08T07:03:40.000Z" title="发表于 2025-07-08 15:03:40">2025-07-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-09T00:41:57.506Z" title="更新于 2025-07-09 08:41:57">2025-07-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/">计算机与编程学习</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%9F%BA%E7%A1%80/">嵌入式基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">3.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-07-09 08:41:57&quot;}" hidden></div><h1 id="1-STM32简介"><a href="#1-STM32简介" class="headerlink" title="1 STM32简介"></a>1 STM32简介</h1><h2 id="1-1-STM和arm介绍"><a href="#1-1-STM和arm介绍" class="headerlink" title="1.1 STM和arm介绍"></a>1.1 STM和arm介绍</h2><p>STM32是ST公司基于ARM Cortex-M内核开发的<strong>32位微控制器(MCP)</strong>。ARM Cortex-M内核是STM32内部的核心部分，相当于整个芯片的CPU，这个内核是ARM公司设计的，其他外设部分是STM公司设计的。</p>
+<p>STM32系列介绍</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20250708153057.png"/></p>
+<blockquote>
+<p>补充，ARM介绍</p>
+<p>ARM既指ARM公司，也指ARM处理器内核</p>
+<p>ARM公司是全球领先的半导体知识产权（IP）提供商，全球超95%的智能手机和平板电脑都采用ARM架构</p>
+<p>ARM公司设计ARM内核，半导体厂商(ST公司)完善内核周边电路并生产芯片，结构如下图所示</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20250708153740.png" style="zoom:60%"/></p>
+</blockquote>
+<h2 id="1-2-本课程使用芯片介绍"><a href="#1-2-本课程使用芯片介绍" class="headerlink" title="1.2 本课程使用芯片介绍"></a>1.2 本课程使用芯片介绍</h2><h3 id="1-2-1-芯片的命名规则"><a href="#1-2-1-芯片的命名规则" class="headerlink" title="1.2.1 芯片的命名规则"></a>1.2.1 芯片的命名规则</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20250708161601.png"/></p>
+<h3 id="1-2-2-芯片基本信息"><a href="#1-2-2-芯片基本信息" class="headerlink" title="1.2.2 芯片基本信息"></a>1.2.2 芯片基本信息</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>STM32F103C8T6芯片</th>
+<th>实物图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>• 系列：主流系列STM32F1<br>• 内核：ARM Cortex-M3<br>• 主频：72MHz<br>• RAM：20K（SRAM）<br>• ROM：64K（Flash）<br>• 供电：2.0~3.6V（标准3.3V） <br>• 封装：LQFP48(48个引脚)</td>
+<td><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20250708154147.png" style="zoom:60%"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="1-2-3-芯片外设-Peripheral"><a href="#1-2-3-芯片外设-Peripheral" class="headerlink" title="1.2.3 芯片外设(Peripheral)"></a>1.2.3 芯片外设(Peripheral)</h3><p>芯片外设就是STM公司在ARM内核上添加的外围电路，又称<strong>片上资源</strong>。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>外设英文缩写</th>
+<th>外设中文名称</th>
+<th>外设英文缩写</th>
+<th>外设中文名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font color=red>NVIC</font></td>
+<td>嵌套向量中断控制器</td>
+<td>DMA</td>
+<td>直接内存访问</td>
+</tr>
+<tr>
+<td><font color=red>SysTick</font></td>
+<td>系统滴答定时器</td>
+<td>ADC</td>
+<td>模数转换器</td>
+</tr>
+<tr>
+<td>RCC</td>
+<td>复位和时钟控制</td>
+<td>RTC</td>
+<td>实时时钟</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td>通用IO口</td>
+<td>CRC</td>
+<td>CRC校验</td>
+</tr>
+<tr>
+<td>AFIO</td>
+<td>复用IO口</td>
+<td>PWR</td>
+<td>电源控制</td>
+</tr>
+<tr>
+<td>EXTI</td>
+<td>外部中断</td>
+<td>BKP</td>
+<td>备份寄存器</td>
+</tr>
+<tr>
+<td>TIM</td>
+<td>定时器</td>
+<td>IWDG</td>
+<td>独立看门狗</td>
+</tr>
+<tr>
+<td>USART</td>
+<td>同步/异步串口通信</td>
+<td>WWDG</td>
+<td>窗口看门狗</td>
+</tr>
+<tr>
+<td>I2C</td>
+<td>I2C通信</td>
+<td><font color=blue>DAC</font></td>
+<td>数模转换器</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>SPI通信</td>
+<td><font color=blue>SDIO</font></td>
+<td>SD卡接口</td>
+</tr>
+<tr>
+<td>CAN</td>
+<td>CAN通信</td>
+<td><font color=blue>FSMC</font></td>
+<td>可变静态存储控制器</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>USB通信</td>
+<td><font color=blue>USB OTG</font></td>
+<td>USB主机接口</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>其中，标红的NVIC和SysTick是位于Cortex-M3内核里面的外设，其他的都是内核外的外设。此外，标蓝的是我们学习的芯片所没有的外设。</p>
+<p>SysTick是内核里面的一个定时器，主要用来给操作系统提供定时服务的，STM32是可以加入操作系统的，比如FreeRTOS、UCOS等，如果用了这些操作系统，就需要SysTick提供定时产生Tick中断来进行任务切换的功能。如果不使用操作系统，SysTick也可以当作一个简单的延时函数处理。</p>
+</blockquote>
+<p>🔰</p>
+<blockquote>
+<ul>
+<li>RCC<ul>
+<li>可以对系统的时钟进行配置，还有就是使能各模块的时钟，在STM32中，其它的这些外设在上电的情况下默认是没有开启时钟的，不给时钟的情况下，操作外设是无效的，外设也不会工作，这样的目的是降低功耗。</li>
+</ul>
+</li>
+<li>AFIO<ul>
+<li>它可以完成复用功能端口的重定义，还有<strong>中断端口的配置</strong>。</li>
+</ul>
+</li>
+<li>EXTI<ul>
+<li>配置好外部中断后，当GPIO引脚有电平变化时，就可以触发中断，让CPU来处理任务。</li>
+</ul>
+</li>
+<li>TIM<ul>
+<li>是整个STMB2最常用、功能最多的外设</li>
+<li>TIM分为高级定时器、通用定时器、基本定时器三种类型</li>
+<li>可以完成定时中断的任务，还可以完成测频率、生成PWM波形、配置成专用的编码器接口等功能</li>
+</ul>
+</li>
+<li>ADC<ul>
+<li>STM32内置了12位的AD转换器可以直接读取GPIO引脚的模拟电压值，无需外部连接AD芯片，使用非常方便。</li>
+</ul>
+</li>
+<li>DMA<ul>
+<li>可以帮助CPU完成搬运大量数据这样的繁杂任务</li>
+</ul>
+</li>
+<li>I2C、SPI<ul>
+<li>非常常用的两种通信协议，STMB2也内置了它们的控制器，可以用硬件来输出时波形。</li>
+<li>当然用通用GPIO口来模拟通信的时波形也是没有问题的，但还是硬件实现方式使用起来更高效。</li>
+</ul>
+</li>
+<li>CAN<ul>
+<li>CAN通信一般用于<strong>汽车领域</strong>。</li>
+</ul>
+</li>
+<li>RTC<ul>
+<li>在STM32内部完成年月日、时分秒的计时功能</li>
+<li>可以接外部备用电池，即使掉电也能正常运行</li>
+</ul>
+</li>
+<li>CRC<ul>
+<li>专门设计的外部电路，用于进行数据校验，用于判断数据的正确性。</li>
+</ul>
+</li>
+<li>PWR<ul>
+<li>电源控制，可以让芯片进入睡眠模式等状态，来达到省电的目的。</li>
+</ul>
+</li>
+<li>BKP<ul>
+<li>这是一段存储器，当系统掉电时仍可由备用电池保持数据，这个根据需要，可以完成一些特殊功能。</li>
+</ul>
+</li>
+<li>IWDG、WWDG<ul>
+<li>当单片机因为电磁干扰死机或者程序设计不合理出现死循环时，看门狗可以及时复位芯片，保证系统的稳定</li>
+</ul>
+</li>
+<li>DAC<ul>
+<li>可以在I回直接输出模拟电压，是ADC模数转换的逆过程。</li>
+</ul>
+</li>
+<li>SDIO<ul>
+<li>是SD卡接口，可以用来读取SD卡</li>
+</ul>
+</li>
+<li>FSMC<ul>
+<li>可以用于扩展内存</li>
+<li>或者配置成其他总线协议，用于某些硬件的操作</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="1-2-4-芯片的系统结构"><a href="#1-2-4-芯片的系统结构" class="headerlink" title="1.2.4 芯片的系统结构"></a>1.2.4 芯片的系统结构</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/134a6266360f8d167803016eb4d48ff8.png"/></p>
+<ul>
+<li>三条总线：ICode指令总线（加载程序指令）、DCode数据总线（加载数据，比如常量何调试数据）、Systme系统总线。ICode与DCode总线主要用来连接Flash闪存（Flash存储的是编写的程序）。<ul>
+<li>ICode（Instruction，指令总线）：程序编译后的指令存放在内部FLASH中，M3内核通过ICode总线取指，然后再执行指令。</li>
+<li>DCode（Data，数据总线）：程序有常量和变量。const修饰的变量为常量存储在内部FLASH中，变量不管是全局变量还是局部变量都存放在SRAM中。由于数据可以被DCode和DMA总线访问，所以就需要经过总线矩阵来仲裁。</li>
+<li>Systme（系统总线）：系统总线主要用来访问外设寄存器（即读写寄存器就是通过该总线完成），比如SRAM(用于存储程序运行时的变量数据)。</li>
+</ul>
+</li>
+<li>AHB（先进高性能总线）系统总线用于<strong>挂载主要的外设</strong>（挂载最基本或者性能比较高的外设，比如复位和时钟控制这些最基本的电路）SDIO也是挂载在AHB上的。 <ul>
+<li>两个桥接，接到了APB1和APB2两个外设总线上（APB代表先进外设总线，用来连接一般的外设）。因为AHB和APB的总线协议、总线速度还有数据传输格式的<strong>差异</strong>，所以中间需要加两个桥接来完成<strong>数据的转换和缓存</strong>。</li>
+<li>AHB的整体性能比APB高一些，APB2的性能比APB1高一些。APB2一般和AHB同频率都是<code>72MHz</code>，APB1一般是<code>36MHz</code>，所以APB2连接的一般是外设中稍微重要的部分（例如GPIO端口，还有一些外设的一号选手比如USART1、SPI1、TIM1、TIM8（高级定时器）、ADC、EXTI、AFIO)，APB1连接次要一点的外设2、3、4号外设还有DAC/PWR/BKP等，在实际使用中我们感觉不到APB1和APB2的性能差异，只需要知道外设是挂载到哪个总线上的就可以了。</li>
+</ul>
+</li>
+<li>DMA是内核CPU的小秘书，比如一些大量的数据搬运这样简单且重复干的事情，让CPU来干会浪费时间。DMA通过DMA总线连接到总线矩阵上，可以拥有和CPU一样的总线控制权，用于访问外设小弟，当需要DMA搬运数据时，外设就会通过请求线发送DMA请求，然后DMA就会获得总线控制权，访问并转运数据，整个过程不需要cpu的参与，省下CPU的时间来干其他的事情。</li>
+</ul>
+<h3 id="1-2-5-芯片引脚定义"><a href="#1-2-5-芯片引脚定义" class="headerlink" title="1.2.5 芯片引脚定义"></a>1.2.5 芯片引脚定义</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20250708163338.png"/></p>
+<p>表中，标橙红色的是电源相关的引脚，标蓝色的是最小系统相关的引脚，标绿色的是GPIO口、功能口这些引脚。如果我们想让STM32正常工作，首先就需要把电源部分和最小系统部分的电路连接好，也就是上表中标注红色和蓝色的部分。</p>
+<p>表中第三列的含义：S代表电源、I代表输入、O代表输出、I/O代表输入输出。 </p>
+<p>表中第四列的含义：GPIO口所能容忍的电压，<strong>FT代表能容忍5V电压</strong>，<strong>没有FT的只能容忍3.3V电压</strong>，如果没有FT的需要接5V的电平，就需要加装电平转换电路/芯片了。 </p>
+<p>表中第五列的含义：主功能就是上电后默认的功能，一般和引脚名称相同。如果不同的话引脚的实际功能是主功能而不是引脚名称的功能。</p>
+<p>表中第六列的含义：默认复用功能，是IO口上同时连接的外设功能引脚，就是片上外设的端口和GPIO的连接关系，<strong>配置IO口时可以选择是通用IO口还是复用功能</strong>。</p>
+<p>表中第七列的含义：重定义功能，作用是如果有两个功能同时复用在了一个IO口上，而且确实需要用到这两个功能，可以将其中一个复用功能重映射到其他端口上（前提是，这个重定义功能的表里有对应的端口）。</p>
+<blockquote>
+<p>推荐：优先使用加粗的IO口，没有加粗的IO口可能需要进行配置或者兼具其他功能。 </p>
+</blockquote>
+<p><strong>详细引脚介绍如下表所示：</strong> </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标号</th>
+<th>引脚左右</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>VBAT是备用电池供电引脚，可接3v电池，当系统电源断电时，备用电池可给内部的RTC时钟和备份寄存器提供电源。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>IO口或侵入检测或RTC，IO口可以根据程序输出或读取高低电平。侵入检测可以用来做安全保障的功能（比如你的产品安全性比较高，可以在外壳加一些防拆的触点，然后接上电路到这个引脚上，若有人强行拆开设备，则触点断开，这个引脚的电平变化就会触发STM32的侵入信号，然后就会清空数据来保证安全）。RTC的引脚可以用来输出RTC校准时钟、RTC闹钟脉冲或者秒脉冲</td>
+</tr>
+<tr>
+<td>3、4</td>
+<td>IO口或者接32.768KHz的RTC晶振</td>
+</tr>
+<tr>
+<td>5、6</td>
+<td>接系统的主晶振，一般是8MHz，然后芯片内有锁相环电路，可以对这个8MHz的频率进行倍频，最终产生72Mhz的频率作为系统的主时钟</td>
+</tr>
+<tr>
+<td>7</td>
+<td>NRST是系统复位引脚，N代表是低电平复位</td>
+</tr>
+<tr>
+<td>8、9</td>
+<td>内部模拟部分的电源，比如ADC、RC振荡器等。VSS是负极，接GND，VDD是正级，接3.3V</td>
+</tr>
+<tr>
+<td>10-19</td>
+<td>都是IO口，其中PA0还兼具了WKUP功能（可以用于唤醒处于待机模式的STM32）</td>
+</tr>
+<tr>
+<td>20</td>
+<td>IO口或BOOT1引脚，BOOT引脚是用来配置启动模式的</td>
+</tr>
+<tr>
+<td>21、22</td>
+<td>IO口</td>
+</tr>
+<tr>
+<td>23、24</td>
+<td>VSS_1和VDD_1是系统的主电源口，同样的VSS是负极，VDD是正级</td>
+</tr>
+<tr>
+<td>25-33</td>
+<td>都是IO口</td>
+</tr>
+<tr>
+<td>27、34-40</td>
+<td>都是IO口或者调试端口，默认功能是调试端口（用来调试程序和下载数据），这个STM32支持SWD（需要两根线，分别是SWDIO和SWCLK)和JTAG(需要五根线，分别是JTMS、JTCK、JTDI、JTDO、NJTRST)两种调试方式。 如果作为调试端口，则需要编写程序配置为普通IO口。</td>
+</tr>
+<tr>
+<td>41-46</td>
+<td>除去44号引脚，都是IO口</td>
+</tr>
+<tr>
+<td>44</td>
+<td>是BOOT0引脚，和BOOT1一样用来做启动配置</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="1-2-6-启动配置"><a href="#1-2-6-启动配置" class="headerlink" title="1.2.6 启动配置"></a>1.2.6 启动配置</h3><p>启动配置的作用是指定程序开始运行的位置，一般情况下，程序都是在Flash程序存储器开始执行(第一种启动模式)。但是在某些情况下，我们也可以让程序在别的地方开始执行。</p>
+<p>第二种启动模式(串口下载用的，区别于使用JLink)：系统存储器存的就是STM32中的一段BootLoader程序，BootLoader的作用就是接收串口的数据，然后刷新到主闪存中(最后再跳转到第一种位置处运行)。简单说这种模式就是使用窗口下载程序。</p>
+<p>第三种启动模式：主要用来程序调试的，用的比较少。</p>
+<blockquote>
+<p>注意：BOOT引脚的值是在上电复位后的一<strong>瞬间有效</strong>的，之后就随便了。查看上面的引脚分布图，发现BOOT1和PB2是在同一个引脚上，也就是在上电瞬间是BOOT1功能，<strong>在第四个时钟过后，就是PB2的功能了</strong>。</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20250708165757.png"/></p>
+<h3 id="1-2-7-最小系统电路"><a href="#1-2-7-最小系统电路" class="headerlink" title="1.2.7 最小系统电路"></a>1.2.7 最小系统电路</h3><p>如果想让STM32正常工作，首先就需要把电源和最小系统部分的电路连接好。也就是前面表格中标红色和蓝色的部分。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/456fdb8a4052e17f23c74b2f98e74a84.png"/></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/f9f5370c0fd33e1df09f56324aee86a7.png"/></p>
+<ul>
+<li><strong>供电部分电路</strong>：</li>
+</ul>
+<p>右边三个分区供电的主电源和模拟部分电源都连接到了供电引脚，VSS都连接了GND，VDD都连接了3,3V，在3.3V和GND之间，一般都会连接一个滤波电容，保证供电电压的稳定。</p>
+<p>左上脚VBAT接的备用电池(纽扣电池)，用来给RTC和备份寄存器服务的。如果不用备用电池，VBAT可以直接接3.3V或者悬空。</p>
+<p>STM32的供电还是比较多的，而且芯片四周都有供电引脚，这个要是自己画板子的话，就会深有体会，走线比较头疼。</p>
+<ul>
+<li><strong>晶振电路</strong></li>
+</ul>
+<p>接了一个8MHz的主时钟晶振，经过内部锁相环倍频，得到72MHz的主频。晶振连接到STM32的5、6号引脚。另外还需要接两个20pF的电容，作为起振电容，电容的另一端接地即可。</p>
+<p>如果需要<strong>RTC功能，还需要再接一个32.768KHz的晶振，电路和这个一样接到3、4号引脚</strong>。OSC32就是32.768KHz晶振的意思。为什么要用32.768KHz？因为32768是2的15次方，内部RTC电路经过2的15次方分频，就可以生成1S的时间信号了。</p>
+<ul>
+<li><strong>复位电路</strong>：</li>
+</ul>
+<p>复位电路是一个10k的电阻和0.1uF的电容组成的，用来给单片机提供复位信号。NRST接到STM32的7号引脚，NRST是低电平复位的，当这个复位电路在上电的瞬间，电容是没有电的，电源通过电阻开始向电容充电，并且此时电容呈现的是短路状态，NRST就会产生低电平，当电容逐渐充满电时，电容就相当于断路，此时、NRST就会被R1上拉为高电平。那上电瞬间的波形就是先低电平，然后逐渐高电平，这个低电平就可以提供STM32的上电复位信号。当然电容充电还是非常快的，所以在我们看来单片机在上电的一瞬间复位了，这就是复位电路的作用。</p>
+<p>电容左边还并联了一个按键，提供手动复位的功能。按键按下时，电容被放电，并且NRST引脚也通过按键被直接接地了，相当于手动产生了低电平复位信号。按键松手后，NRST又回归高电平，此时单片机就从复位状态转为工作状态。一般复位按键都是在一个小孔里，拿针戳一下设备就复位了。</p>
+<ul>
+<li><strong>启动配置</strong>：</li>
+</ul>
+<p>跳线帽的方式，接拨码开关也可以。</p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhuguanlin121/article/details/135444637">江科大STM32最全笔记整理『上篇』 - CSDN</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">君恒</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/07/08/Learn-STM32-1/">http://example.com/2025/07/08/Learn-STM32-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">君恒的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a><a class="post-meta__tags" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a><a class="post-meta__tags" href="/tags/STM32/">STM32</a></div><div class="post-share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/07/05/FreeRTOS-Learn-3/" title="FreeRTOS基础学习_Part3"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">FreeRTOS基础学习_Part3</div></div><div class="info-2"><div class="info-item-1">12 任务通知(Task Notifications)所谓”任务通知”，你可以反过来读”通知任务”。  使用队列、信号量、事件组等方法时，并不知道对方是谁。使用任务通知时，可明确指定：通知哪个任务。  使用队列、信号量、事件组时，我们都要事先创建对应的结构体，双方通过中间的结构体通信：   使用任务通知时，任务结构体TCB中就包含了内部对象，可以直接接收别人发过来的”通知”，如下图所示，也就是说任务A或者ISR可以直接修改任务B内部结构体TCB：   12.1 任务通知的特性12.1.1 优势及限制 任务通知的优势：  效率更高：用任务通知来发送事件、数据给某个任务时，比队列、信号量、事件组等效率都更高。 更节省内存：使用其他方法时都要先创建对应的结构体，使用任务通知时无需额外创建结构体。    任务通知的限制：  不能发送数据给 ISR：  ISR并没有任务结构体，所以无法使用任务通知的功能给ISR发送数据。 但是ISR可以使用任务通知的功能，发数据给任务。...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/07/01/FreeRTOS-Learn-1/" title="FreeRTOS基础学习_Part1"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-01</div><div class="info-item-2">FreeRTOS基础学习_Part1</div></div><div class="info-2"><div class="info-item-1">1 单片机程序设计模式1.1 裸机程序设计模式裸机程序的设计模式可以分为：轮询、前后台(中断)、定时器驱动、基于状态机。前面3种方法都无法解决一个问题：假设有 A、B 两个都很耗时的函数，无法降低它们相互之间的影响。 第4种方法可以解决这个问题，但是实践起来有难度。比如这样一个场景：一位职场妈妈需要同时解决 2 个问题：给小孩喂饭、回复工作信息。 1.1.1 轮询模式示例代码如下：  123456789/* 经典单片机程序: 轮询 */void main()  &#123;     while (1)     &#123;         喂一口饭();         回一个信息();     &#125; &#125;  轮询模式在main函数中是一个while循环，里面依次调用2个函数，这两个函数相互之间有影响：如果“喂一口饭”太花时间，就会导致迟迟无法“回一个信息”；如果“回一个信息” 太花时间，就会导致迟迟无法“喂下一口饭”。  1.1.2...</div></div></div></a><a class="pagination-related" href="/2025/07/03/FreeRTOS-Learn-2/" title="FreeRTOS基础学习_Part2"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-03</div><div class="info-item-2">FreeRTOS基础学习_Part2</div></div><div class="info-2"><div class="info-item-1">7 同步互斥与通信7.1 同步与互斥的概念一句话理解同步与互斥：我等你用完厕所，我再用厕所。 123- 什么叫同步？就是：哎哎哎，我正在用厕所，你等会。 - 什么叫互斥？就是：哎哎哎，我正在用厕所，你不能进来，也即同一时间只有一个人能使用 同步与互斥经常放在一起讲，是因为它们之的关系很大，“互斥”操作可以使用“同步”来实现。我“等”你用完厕所，我再用厕所。这不就是用“同步”来实现“互斥”吗？   相当于大丙老师多线程教学中的“线程同步”和“互斥锁”的概念吗？  7.2 有缺陷的同步与互斥示例通过下面两个任务示例，就可以比较容易地看出同步和互斥想要解决的问题。 同步主要聚焦于两/多个任务有依赖关系，其中一个任务B需要另一个任务A的处理结果，所以任务B就需要等待任务A处理结束才能继续运行，所以任务/线程同步聚焦于解决如何让等待的线程B在等待期间尽量少地占用CPU资源。 互斥主要聚焦于两/多个任务共同访问同一个共享资源，这些任务不一定有依赖关系，可能是完全独立的任务，但是有些任务会写入共享资源，有些任务会读取共享资源，如果不加以处理，写入和读取就会乱套，导致程序Bug。 7.2.1...</div></div></div></a><a class="pagination-related" href="/2025/07/05/FreeRTOS-Learn-3/" title="FreeRTOS基础学习_Part3"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-05</div><div class="info-item-2">FreeRTOS基础学习_Part3</div></div><div class="info-2"><div class="info-item-1">12 任务通知(Task Notifications)所谓”任务通知”，你可以反过来读”通知任务”。  使用队列、信号量、事件组等方法时，并不知道对方是谁。使用任务通知时，可明确指定：通知哪个任务。  使用队列、信号量、事件组时，我们都要事先创建对应的结构体，双方通过中间的结构体通信：   使用任务通知时，任务结构体TCB中就包含了内部对象，可以直接接收别人发过来的”通知”，如下图所示，也就是说任务A或者ISR可以直接修改任务B内部结构体TCB：   12.1 任务通知的特性12.1.1 优势及限制 任务通知的优势：  效率更高：用任务通知来发送事件、数据给某个任务时，比队列、信号量、事件组等效率都更高。 更节省内存：使用其他方法时都要先创建对应的结构体，使用任务通知时无需额外创建结构体。    任务通知的限制：  不能发送数据给 ISR：  ISR并没有任务结构体，所以无法使用任务通知的功能给ISR发送数据。 但是ISR可以使用任务通知的功能，发数据给任务。...</div></div></div></a><a class="pagination-related" href="/2025/07/01/FreeRTOS-Learn/" title="FreeRTOS基础学习_Part1"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-01</div><div class="info-item-2">FreeRTOS基础学习_Part1</div></div><div class="info-2"><div class="info-item-1">1 单片机程序设计模式1.1 裸机程序设计模式裸机程序的设计模式可以分为：轮询、前后台(中断)、定时器驱动、基于状态机。前面3种方法都无法解决一个问题：假设有 A、B 两个都很耗时的函数，无法降低它们相互之间的影响。 第4种方法可以解决这个问题，但是实践起来有难度。比如这样一个场景：一位职场妈妈需要同时解决 2 个问题：给小孩喂饭、回复工作信息。 1.1.1 轮询模式示例代码如下：  123456789/* 经典单片机程序: 轮询 */void main()  &#123;     while (1)     &#123;         喂一口饭();         回一个信息();     &#125; &#125;  轮询模式在main函数中是一个while循环，里面依次调用2个函数，这两个函数相互之间有影响：如果“喂一口饭”太花时间，就会导致迟迟无法“回一个信息”；如果“回一个信息” 太花时间，就会导致迟迟无法“喂下一口饭”。  1.1.2...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1e626d0e0a243d4fbcc56.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">君恒</div><div class="author-info-description">我的博客我做主</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">21</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wang-jun-heng"><i class="fab fa-github"></i><span>Follow My Github</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/wang-jun-heng" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:junheng.wang@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到君恒的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-STM32%E7%AE%80%E4%BB%8B"><span class="toc-text">1 STM32简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-STM%E5%92%8Carm%E4%BB%8B%E7%BB%8D"><span class="toc-text">1.1 STM和arm介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E6%9C%AC%E8%AF%BE%E7%A8%8B%E4%BD%BF%E7%94%A8%E8%8A%AF%E7%89%87%E4%BB%8B%E7%BB%8D"><span class="toc-text">1.2 本课程使用芯片介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E8%8A%AF%E7%89%87%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">1.2.1 芯片的命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E8%8A%AF%E7%89%87%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-text">1.2.2 芯片基本信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E8%8A%AF%E7%89%87%E5%A4%96%E8%AE%BE-Peripheral"><span class="toc-text">1.2.3 芯片外设(Peripheral)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%E8%8A%AF%E7%89%87%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="toc-text">1.2.4 芯片的系统结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-5-%E8%8A%AF%E7%89%87%E5%BC%95%E8%84%9A%E5%AE%9A%E4%B9%89"><span class="toc-text">1.2.5 芯片引脚定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-6-%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE"><span class="toc-text">1.2.6 启动配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-7-%E6%9C%80%E5%B0%8F%E7%B3%BB%E7%BB%9F%E7%94%B5%E8%B7%AF"><span class="toc-text">1.2.7 最小系统电路</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/07/08/Learn-STM32-1/" title="STM32基础学习_Part1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32基础学习_Part1"/></a><div class="content"><a class="title" href="/2025/07/08/Learn-STM32-1/" title="STM32基础学习_Part1">STM32基础学习_Part1</a><time datetime="2025-07-08T07:03:40.000Z" title="发表于 2025-07-08 15:03:40">2025-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/05/FreeRTOS-Learn-3/" title="FreeRTOS基础学习_Part3"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FreeRTOS基础学习_Part3"/></a><div class="content"><a class="title" href="/2025/07/05/FreeRTOS-Learn-3/" title="FreeRTOS基础学习_Part3">FreeRTOS基础学习_Part3</a><time datetime="2025-07-05T14:56:25.000Z" title="发表于 2025-07-05 22:56:25">2025-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/05/DoubanCard/" title="无标题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic1.imgdb.cn/item/67a1f028d0e0a243d4fbcdf5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无标题"/></a><div class="content"><a class="title" href="/2025/07/05/DoubanCard/" title="无标题">无标题</a><time datetime="2025-07-05T03:44:59.394Z" title="发表于 2025-07-05 11:44:59">2025-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/03/FreeRTOS-Learn-2/" title="FreeRTOS基础学习_Part2"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FreeRTOS基础学习_Part2"/></a><div class="content"><a class="title" href="/2025/07/03/FreeRTOS-Learn-2/" title="FreeRTOS基础学习_Part2">FreeRTOS基础学习_Part2</a><time datetime="2025-07-03T08:44:04.000Z" title="发表于 2025-07-03 16:44:04">2025-07-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/01/FreeRTOS-Learn-1/" title="FreeRTOS基础学习_Part1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s3.bmp.ovh/imgs/2025/07/01/0c91be52bb1dddbe.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="FreeRTOS基础学习_Part1"/></a><div class="content"><a class="title" href="/2025/07/01/FreeRTOS-Learn-1/" title="FreeRTOS基础学习_Part1">FreeRTOS基础学习_Part1</a><time datetime="2025-07-01T02:25:35.000Z" title="发表于 2025-07-01 10:25:35">2025-07-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By 君恒</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="请输入搜索内容" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
