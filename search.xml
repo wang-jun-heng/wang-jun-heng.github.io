@@ -194,19 +194,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/2025/07/05/DoubanCard/"/>
-      <url>/2025/07/05/DoubanCard/</url>
-      
-        <content type="html"><![CDATA[{"movie":[{"status":"灯影绰约","title":"鬼子来了(2000)","director":"姜文","actors":"姜文/香川照之","publishDate":"2000-05-12(戛纳电影节)","rate":"9.3","img":"https://images.weserv.nl/?url=https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2553104888.jpg","url":"https://movie.douban.com/subject/1291858"},{"status":"灯影绰约","title":"寻梦环游记Coco(2017)","director":"李·昂克里奇/阿德里安·莫利纳","actors":"安东尼·冈萨雷斯/盖尔·加西亚·贝纳尔","publishDate":"2017-11-24(中国大陆)","rate":"9.1","img":"https://images.weserv.nl/?url=https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2505426431.jpg","url":"https://movie.douban.com/subject/20495023"}],"book":[],"music":[]}]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>FreeRTOS基础学习_Part2</title>
       <link href="/2025/07/03/FreeRTOS-Learn-2/"/>
       <url>/2025/07/03/FreeRTOS-Learn-2/</url>
@@ -867,22 +854,22 @@
     
     
     <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>友情链接</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
-        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>友情链接</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p>]]></content>
       
     </entry>
     
