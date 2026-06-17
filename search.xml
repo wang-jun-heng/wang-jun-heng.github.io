@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>ZYNQ的FPGA侧基础学习_Part1</title>
+      <link href="/2026/06/17/Learn-ZYNQ-FPGA-1/"/>
+      <url>/2026/06/17/Learn-ZYNQ-FPGA-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-ZYNQ初始"><a href="#1-ZYNQ初始" class="headerlink" title="1 ZYNQ初始"></a>1 ZYNQ初始</h1><p>测试</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机与编程学习 </category>
+          
+          <category> 嵌入式基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 嵌入式 </tag>
+            
+            <tag> 单片机 </tag>
+            
+            <tag> ZYNQ </tag>
+            
+            <tag> FPGA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cmake学习</title>
       <link href="/2026/01/12/Learn-Cmake/"/>
       <url>/2026/01/12/Learn-Cmake/</url>
@@ -889,6 +922,17 @@
     
     
     <entry>
+      <title>关于</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p><p> ✅ ⬜ </p><p><strong>2026年计划</strong></p><div class="table-container"><table><thead><tr><th>完成</th><th>计划事项</th></tr></thead><tbody><tr><td><input type="checkbox" checked></td><td>设定2026年计划</td></tr><tr><td><input type="checkbox"></td><td>运动+减肥，体重控制到130以下</td></tr><tr><td><input type="checkbox"></td><td>读书，完成《半小时漫画中国史大全集》和笔记，并且笔记至少过三遍</td></tr><tr><td><input type="checkbox"></td><td>读书理财，没有确定的指标，简单说就是学习理财、阅读理财方面的书籍</td></tr><tr><td><input type="checkbox"></td><td>练习“说话”，可以买一些课程或者添加一些讲话练习群</td></tr></tbody></table></div><p><strong>心灵鸡汤</strong></p><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">切不可妄自菲薄，宁愿自负，不要自卑。自负的人折磨别人，自卑的人折磨自己。宁可我负天下人，莫要天下人负我。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">多晒太阳、多参加户外运动，多交朋友，多参加社交活动，保持心情、身体双健康。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">欲速则不达，见小利则大事不成。 </br>不积跬步，无以至千里；不积小流，无以成江海。</br>日日行，不怕千万里；常常做，不怕千万事。</br>厚积薄发，久久为功。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">种一棵树最好的时间是十年前，其次是现在。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">做一件事情之前，首先要判断这件事是不是必须做，如果没有下定决心或者一时兴起，那么这件事就对你没有什么用处，不会增长你的能力，而且浪费时间。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">遇事不要慌张，天塌不下来。只有冷静思考，沉心静气，才能从从容容、游刃有余。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">躲天意，避因果，诸般枷锁困真我；顺天意，承因果，今日方知我是我；一朝悟道见真我，何惧昔日旧枷锁，世间枷锁本是梦，无形无相亦无我。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">其实你养的不只是爬山虎，也是在练一颗能等、能忍、能沉住气的心。 等某天你一抬头，发现它已经爬了一大片，你会突然明白：所有当时觉得 “没变化” 的日子，全都是铺垫。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">低级的婚姻是繁衍后代，中级的婚姻是合作共赢，高级的婚姻是寻觅战友彼此欣赏。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">在这个快节奏的时代，人心浮躁，只有慢下来，才能明白：走得最快的并不一定是赢家，走得最稳的才是远方。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">执念太深，往往是一把双刃剑。它既能成为推动人不断前行的动力，也可能变成困住心灵的牢笼。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">基于恐惧的驱动力。 这种高压状态会导致严重的焦虑。在考场上，焦虑会占用你的大脑带宽，导致你明明会做的题做错，面试时紧张得说不出话。<strong>恐惧能推着你走，但也会让你在终点前摔倒</strong>。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">俗话说”人生不如意十之八九“，生活的真相就是：不好才是常态，好是意外。千万不要被一次两次的失败打倒。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3"><strong>永远不要满仓干一件事情</strong>，这句话放在投资里成立，工作里成立，生活里成立，人生中也成立。满仓就是赌徒。年轻的时候，把所有筹码都压在一件事情上：一份工作、一家公司、一个目标等，觉得只要这件事成功了，人生就解决了。但现实往往是：满仓情况下一旦失败，人就容易崩塌了。</br>所以真正厉害的人生策略是要像投资一样，<strong>分散投资降低风险</strong>，多条路，多选择，多种可能性。—— <a href="https://xueqiu.com/6875306027/381062979">《不要满仓一件事儿》- 雪球投资者 - 就不告诉你1988</a></font></td></table>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分类</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -905,17 +949,6 @@
       <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>关于</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<h5 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h5><p>本科学生，致力于学习、生活休闲</p><h5 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h5><p>邮箱：junhengwangrizhao@gmail.com</p><p>地址：山东省日照市莒县</p><h5 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h5><p>我用它做些什么<br>记录学习和生活中的遇到的问题，怕以后忘掉了，不舍得自己掏钱买主机和域名，就在用了Hexo，所以不用问我技术方面的事情，我不懂;<br>或者，只是一个摆设。</p><p> ✅ ⬜ </p><p><strong>2026年计划</strong></p><div class="table-container"><table><thead><tr><th>完成</th><th>计划事项</th></tr></thead><tbody><tr><td><input type="checkbox" checked></td><td>设定2026年计划</td></tr><tr><td><input type="checkbox"></td><td>运动+减肥，体重控制到130以下</td></tr><tr><td><input type="checkbox"></td><td>读书，完成《半小时漫画中国史大全集》和笔记，并且笔记至少过三遍</td></tr><tr><td><input type="checkbox"></td><td>读书理财，没有确定的指标，简单说就是学习理财、阅读理财方面的书籍</td></tr><tr><td><input type="checkbox"></td><td>练习“说话”，可以买一些课程或者添加一些讲话练习群</td></tr></tbody></table></div><p><strong>心灵鸡汤</strong></p><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">切不可妄自菲薄，宁愿自负，不要自卑。自负的人折磨别人，自卑的人折磨自己。宁可我负天下人，莫要天下人负我。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">多晒太阳、多参加户外运动，多交朋友，多参加社交活动，保持心情、身体双健康。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">欲速则不达，见小利则大事不成。 </br>不积跬步，无以至千里；不积小流，无以成江海。</br>日日行，不怕千万里；常常做，不怕千万事。</br>厚积薄发，久久为功。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">种一棵树最好的时间是十年前，其次是现在。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">做一件事情之前，首先要判断这件事是不是必须做，如果没有下定决心或者一时兴起，那么这件事就对你没有什么用处，不会增长你的能力，而且浪费时间。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">遇事不要慌张，天塌不下来。只有冷静思考，沉心静气，才能从从容容、游刃有余。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">躲天意，避因果，诸般枷锁困真我；顺天意，承因果，今日方知我是我；一朝悟道见真我，何惧昔日旧枷锁，世间枷锁本是梦，无形无相亦无我。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">其实你养的不只是爬山虎，也是在练一颗能等、能忍、能沉住气的心。 等某天你一抬头，发现它已经爬了一大片，你会突然明白：所有当时觉得 “没变化” 的日子，全都是铺垫。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">低级的婚姻是繁衍后代，中级的婚姻是合作共赢，高级的婚姻是寻觅战友彼此欣赏。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">在这个快节奏的时代，人心浮躁，只有慢下来，才能明白：走得最快的并不一定是赢家，走得最稳的才是远方。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">执念太深，往往是一把双刃剑。它既能成为推动人不断前行的动力，也可能变成困住心灵的牢笼。 </font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3">基于恐惧的驱动力。 这种高压状态会导致严重的焦虑。在考场上，焦虑会占用你的大脑带宽，导致你明明会做的题做错，面试时紧张得说不出话。<strong>恐惧能推着你走，但也会让你在终点前摔倒</strong>。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=PaleGoldenRod><font size="3">俗话说”人生不如意十之八九“，生活的真相就是：不好才是常态，好是意外。千万不要被一次两次的失败打倒。</font></td></table><table><td style="word-wrap:break-word;word-break:break-all;" width="100px"; bgcolor=LightGreen ><font size="3"><strong>永远不要满仓干一件事情</strong>，这句话放在投资里成立，工作里成立，生活里成立，人生中也成立。满仓就是赌徒。年轻的时候，把所有筹码都压在一件事情上：一份工作、一家公司、一个目标等，觉得只要这件事成功了，人生就解决了。但现实往往是：满仓情况下一旦失败，人就容易崩塌了。</br>所以真正厉害的人生策略是要像投资一样，<strong>分散投资降低风险</strong>，多条路，多选择，多种可能性。—— <a href="https://xueqiu.com/6875306027/381062979">《不要满仓一件事儿》- 雪球投资者 - 就不告诉你1988</a></font></td></table>]]></content>
       
     </entry>
     
