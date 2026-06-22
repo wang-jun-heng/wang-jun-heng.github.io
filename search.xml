@@ -4,11 +4,143 @@
   
     
     <entry>
+      <title>ZYNQ的ARM侧基础学习_Part1</title>
+      <link href="/2026/06/22/Learn-ZYNQ-ARM-1/"/>
+      <url>/2026/06/22/Learn-ZYNQ-ARM-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-初始Vitis"><a href="#1-初始Vitis" class="headerlink" title="1 初始Vitis"></a>1 初始Vitis</h1><p>前面应该学习过ZYNQ的PL端的开发，还不涉及PS端。ZYNQ实际上是以PS端为核心，PL端呢作为它的外设，来去比方说做一个硬件加速了或者是对PS端做一个外设的扩展，那么要学习ZYNQ，一定是要学习PS端开发的。</p><p>前面所学的FPGA开发是通过Verilog语言，是偏底层硬件的开发和设计。而这里所学习的一个Vitis软件是开发它的PS端，使用C或者是C++。</p><p>另外需要说明的是，ZYNQ是PS+PL，而这个MPSoC也是PS+PL，他们只不过是ARM处理器以及PL端的一些资源等等有些差异，但他们的开发很类似，所以说下面的教程以ZYNQ为主要目标来去讲解，那么针对它们的差异地方也会去做一些说明。</p><h2 id="1-1-Vitis是什么"><a href="#1-1-Vitis是什么" class="headerlink" title="1.1 Vitis是什么"></a>1.1 Vitis是什么</h2><p>AMD Vitis软件平台是一款开发环境，主要用于开发包括FPGA架构，ARM处理器子系统和AI引擎在内的设计。Vitis 工具与Vivado设计套件相结合，可以为开发提供更高层次的抽象设计。</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622211858.png" style="zoom:70%"/></p><p>说起这个Vitis，如果之前看过比较旧一点的资料的话，会发现它的一个嵌入式裸机开发工具是SDK，那么这个软件在升级之后就叫Vitis了。其实他俩开发方式有很多类似的地方，像这个SDK呢，它原来是集成在*Vivado* 软件当中的，而后面这个SDK独立出来了，那么也就叫Vitis。</p><h2 id="1-2-为什么学习Vitis"><a href="#1-2-为什么学习Vitis" class="headerlink" title="1.2 为什么学习Vitis"></a>1.2 为什么学习Vitis</h2><p><strong>目的</strong>：为了发挥出ZYNQ/MPSoC软硬件协同设计的优势。</p><p>因为ZYNQ包含PS和PL的，并且以PS为核心，他俩是通过AXI接口进行互联的。在很多的使用场景中，用全FPGA不好实现，而用纯软件呢也不好实现，所以就需要他俩结合到一起。</p><p>那么在学习Vitis的时候，一方面学习他的PS开发，另一方面也是学习PS跟PL他俩是怎么协同设计的。</p><h2 id="1-3-嵌入式系统的开发流程"><a href="#1-3-嵌入式系统的开发流程" class="headerlink" title="1.3 嵌入式系统的开发流程"></a>1.3 嵌入式系统的开发流程</h2><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622214513.png"/></p><p>上图是嵌入式部分的流程图。首先第一步就是创建Vivado工程，这个过程呢其实就跟我们前面做FPGA开发是一样的，就是通过Vivado软件创建一个工程。在创建好之后，就需要来去使用IP的集成器来创建一个PS系统，这个IP集成器是塞灵斯提供了的一个工具，在里面可以调用用赛灵斯的官方的IP核，然后像<strong><font color=red>搭积木</font></strong>一样的方式去搭建整个系统.</p><p>接下来是生成这个顶层的HDL，就是说我们通过这个软件呢来去创建一个顶层的模块，对前面所搭建的系统进行例化。那么接下来就是生成比特流然后把硬件导出，可以发现这个生成比特流打了个括号，意思是它是一个可选的，如果这个系统只有PS端，那么是没有必要生成这个比特流（也生成不了，因为里面是没有包含PL端的，因为比特流实际上是PL端的一个配置文件，如果说这个系统里面包含了PL，那么你在后面导出硬件之前就要生成比特流文件）。</p><p>接下来就进入Vitis的一个开发了，它是基于前面所搭建的硬件平台进行一个开发，那么最后就是进行板级验证。</p><h2 id="1-4-ZYNQ-MPSoC最小系统"><a href="#1-4-ZYNQ-MPSoC最小系统" class="headerlink" title="1.4 ZYNQ/MPSoC最小系统"></a>1.4 ZYNQ/MPSoC最小系统</h2><p>下面再来看一下ZYNQ的一个最小系统，下图是给出了ZYNQ的一个最小系统（<strong>ZYNQ的最小系统只包含了PS，不包含PL</strong>）：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622223751.png" style="zoom:60%"/></p><p>最小系统这里给出了两个条件：① 它是系统正常工作的最小条件；② 它是其他系统建立的基础。</p><p>最小系统中，至少包含一个ARM A9处理器，然后它还有一个DDR3存储控制器，与外部的DDR3存储芯片连接，程序是要运行在这个DDDR3上面的，另外有一些数据也可以存储在里面。接着还需要一个UART控制器，它通过MIO外设接到了USB_UART。那么为什么需要这个串口呢？其实大家如果说按照我们的文档操作的话呢，应该是所有历程都会包含这个UART，这个UART在我们后面开发过程当中会比较频繁的用到，可以通过它打印一些信息。</p><p>另外还有一点需要跟大家强调一下，这个DDR3控制器它并不是必须的，因为也可以把程序运行在这个OCM（片上存储器）里面，只不过这种程序运行在OCM上不典型，那么为什么不典型呢？主要是他的这个存储容量比较小，跟外置的DDR3肯定没法比。</p><h2 id="1-5-参考资料"><a href="#1-5-参考资料" class="headerlink" title="1.5 参考资料"></a>1.5 参考资料</h2><ul><li>正点原子文档：<ul><li>嵌入式Vitis开发指南</li></ul></li><li>Xiinx官方手册：<ul><li>Zynq-7000 SoC技术参考手册（UG585)</li><li>Zynq UIltraScale+技术参考手册（UG1085)</li></ul></li></ul><h1 id="2-HelloWorld-ZYNQ最小系统搭建"><a href="#2-HelloWorld-ZYNQ最小系统搭建" class="headerlink" title="2 HelloWorld-ZYNQ最小系统搭建"></a>2 HelloWorld-ZYNQ最小系统搭建</h1><h2 id="2-1-创建Vivado工程"><a href="#2-1-创建Vivado工程" class="headerlink" title="2.1 创建Vivado工程"></a>2.1 创建Vivado工程</h2><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622225222.png"/></p><p>然后，会让你选择工程所在的路径。然后起一个工程名，这里就叫Hello_world。注意要选择Creat project subdirectory，让Vivado帮助我们管理工程目录。</p><p>然后选择创建RTL工程，注意选择Do not specify at this time，也就是我们在创建工程过程中不指定RTL文件。</p><p>然后点击下一步，选择开发板上的芯片型号。点击完成。</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622230207.png"/></p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622230804.png"/></p><p>双击ZYNQ打开PS端的配置：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622231345.png"/></p><p>首先是DDR配置：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622231947.png"/></p><p>接着是串口UART配置：</p><p>方法1，如下图所示：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622232630.png"/></p><p>方法2：如下图所示</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622233006.png"/></p><p>配置串口的参数：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622233124.png"/></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机与编程学习 </category>
+          
+          <category> 嵌入式基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 嵌入式 </tag>
+            
+            <tag> 单片机 </tag>
+            
+            <tag> ZYNQ </tag>
+            
+            <tag> FPGA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ZYNQ的FPGA侧基础学习_Part6</title>
+      <link href="/2026/06/22/Learn-ZYNQ-FPGA-6/"/>
+      <url>/2026/06/22/Learn-ZYNQ-FPGA-6/</url>
+      
+        <content type="html"><![CDATA[<p>预留空间。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机与编程学习 </category>
+          
+          <category> 嵌入式基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 嵌入式 </tag>
+            
+            <tag> 单片机 </tag>
+            
+            <tag> ZYNQ </tag>
+            
+            <tag> FPGA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ZYNQ的FPGA侧基础学习_Part5</title>
+      <link href="/2026/06/22/Learn-ZYNQ-FPGA-5/"/>
+      <url>/2026/06/22/Learn-ZYNQ-FPGA-5/</url>
+      
+        <content type="html"><![CDATA[<p>预留空间。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机与编程学习 </category>
+          
+          <category> 嵌入式基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 嵌入式 </tag>
+            
+            <tag> 单片机 </tag>
+            
+            <tag> ZYNQ </tag>
+            
+            <tag> FPGA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ZYNQ的FPGA侧基础学习_Part4</title>
+      <link href="/2026/06/22/Learn-ZYNQ-FPGA-4/"/>
+      <url>/2026/06/22/Learn-ZYNQ-FPGA-4/</url>
+      
+        <content type="html"><![CDATA[<p>预留空间。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机与编程学习 </category>
+          
+          <category> 嵌入式基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 嵌入式 </tag>
+            
+            <tag> 单片机 </tag>
+            
+            <tag> ZYNQ </tag>
+            
+            <tag> FPGA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ZYNQ的FPGA侧基础学习_Part3</title>
       <link href="/2026/06/21/Learn-ZYNQ-FPGA-3/"/>
       <url>/2026/06/21/Learn-ZYNQ-FPGA-3/</url>
       
-        <content type="html"><![CDATA[<h1 id="9-在线调试"><a href="#9-在线调试" class="headerlink" title="9 在线调试"></a>9 在线调试</h1><h2 id="9-1-在线调试简介"><a href="#9-1-在线调试简介" class="headerlink" title="9.1 在线调试简介"></a>9.1 在线调试简介</h2><ul><li>什么是在线调试<ul><li>在线调试也称为板级调试，它是将程序文件下载到FPGA芯片后分析代码运行的情况。</li></ul></li><li>为什么要在线调试?<ul><li>直接观察代码很难找到BUG</li><li>软件仿真不全面，难以做到100%的代码覆盖率</li><li>在板级交互中，存在异步事件，很难做到仿真，或者仿真起来时间很长，无法运行</li><li>外围电路可靠性问题，如电源问题、信号干扰等导致程序运行出错</li><li>……</li></ul></li></ul><h2 id="9-2-使用在线调试工具"><a href="#9-2-使用在线调试工具" class="headerlink" title="9.2 使用在线调试工具"></a>9.2 使用在线调试工具</h2>]]></content>
+        <content type="html"><![CDATA[<h1 id="9-在线调试"><a href="#9-在线调试" class="headerlink" title="9 在线调试"></a>9 在线调试</h1><h2 id="9-1-在线调试简介"><a href="#9-1-在线调试简介" class="headerlink" title="9.1 在线调试简介"></a>9.1 在线调试简介</h2><ul><li>什么是在线调试<ul><li>在线调试也称为板级调试（必须有开发板），它是将程序文件下载到FPGA芯片后分析代码运行的情况。</li></ul></li><li>为什么要在线调试?<ul><li>直接观察代码很难找到BUG</li><li>软件仿真不全面，难以做到100%的代码覆盖率</li><li>在板级交互中，存在异步事件，很难做到仿真，或者仿真起来时间很长，无法运行</li><li>外围电路可靠性问题，如电源问题、信号干扰等导致程序运行出错</li><li>……</li></ul></li><li>FPGA调试的重要性<ul><li>在整个FPGA设计中，硬件调试与验证会花费超过40%的时间</li><li>低效的策略可能导致产品发布延迟</li></ul></li></ul><h2 id="9-2-在线调试工具"><a href="#9-2-在线调试工具" class="headerlink" title="9.2 在线调试工具"></a>9.2 在线调试工具</h2><ul><li>在线调试的方法<ul><li>利用外部测试设备：如示波器（测量模拟量）和逻辑分析仪（测量数字量）等</li></ul></li><li>利用PGA开发工具自带的在线调试工具(在线逻辑分析仪)</li></ul><div class="table-container"><table><thead><tr><th>FPGA厂商</th><th>FPGA开发工具</th><th>在线调试工具</th></tr></thead><tbody><tr><td>Xilinx</td><td>Vivado</td><td>ILA（Integrated Logic Analyzer）</td></tr><tr><td>Xilinx</td><td>ISE</td><td>ChipScope</td></tr><tr><td>Altera</td><td>Quartus II</td><td>SignalTap II</td></tr><tr><td>紫光同创</td><td>PDS</td><td>Debugger</td></tr></tbody></table></div><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622201117.png"/></p><p>片内逻辑分析仪是片内的资源，所以说它是完全可定制的，你可以去设置要观察多少信号，比方说你要去观察五个端口或者是十个端口或者更多端口都可以去设置。然后要存储个1024深度或者是10240深度，也都是可以定制的。只不过呢观察的端口数量越多、存储深度越深，那么它占用的资源就越多。</p><h2 id="9-3-使用在线调试"><a href="#9-3-使用在线调试" class="headerlink" title="9.3 使用在线调试"></a>9.3 使用在线调试</h2><h3 id="9-3-1-Xilinx在线调试方案"><a href="#9-3-1-Xilinx在线调试方案" class="headerlink" title="9.3.1 Xilinx在线调试方案"></a>9.3.1 Xilinx在线调试方案</h3><ul><li>Xilinx在线调试解决方案<ul><li>Vivado工具集成了逻辑分析仪（ILA），用于替换外部的逻辑分析仪</li><li>添加ILA核和VIO核实现在线调试</li><li>通过JTAG接口和PC连接</li></ul></li><li>ILA VS VIO<ul><li>ILA (Integrated Logic Analyzer)：<strong>监控</strong>逻辑内部信号和端口信号</li><li>VIO (Virtual Input/Output，虚拟IO)：实时监控和<strong>驱动</strong>逻辑内部信号和端口信号</li></ul></li></ul><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622202654.png" style="zoom:60%"/></p><h3 id="9-3-2-添加ILA"><a href="#9-3-2-添加ILA" class="headerlink" title="9.3.2 添加ILA"></a>9.3.2 添加ILA</h3><ul><li><strong>方法1：</strong>添加ILA IP核，在代码中对ILA核进行例化<ul><li>Vivado软件当中集成了很多的IP核（有一个IP库目录，它里面包含图像处理、数字信号处理等等很多的IP核给我们使用，其中有一个就是ILA这个IP核）；</li><li>ILA IP核可以对它进行一个配置，比方说你要观察多少个信号、每个信号的位宽是多少、我们要观察到存储深度是多少等等。</li><li>然后在代码当中对它进行一个例化，其实就是例化IP核，那么它会有很多的端口，这个端口跟要观察的这个信号进行连接，后面生成比特流下载到板子当中，那么它就会弹出一个观察的界面去实时地显示待观察信号的一个变化。</li><li>这种方法是层次化最高的一种方法，比较直接，但是它有个缺点，就是需要去更改HDL代码。</li></ul></li><li><strong>方法2：</strong>在原理图或者网表文件中添加“mark debug”属性</li><li><strong>方法3：</strong>手动地在XDC约束文件中编写对应的TCL XDC调试命令</li></ul><h3 id="9-3-3-插入XADC使用"><a href="#9-3-3-插入XADC使用" class="headerlink" title="9.3.3 插入XADC使用"></a>9.3.3 插入XADC使用</h3><p>在这个FPGA芯片内部有一个XADC硬核，可以通过这个硬核实时采集芯片内部的温度以及一些电压（内核电压或者是BRAM的电压等等）。下面就来演示一下。</p><p>拿出开发板，连接好电源线、下载器，注意拨码开关一定要拨到JTAG模式才行，因为本来就是使用JTAG接口来获取XADC的数据，所以说这个拨码开关一定要拨到JTAG模式。</p><p>然后打开Vivado的软件，直接打开硬件管理员：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622204947.png"/></p><p>然后连接下载器：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622205031.png"/></p><p>下图篮框中会有一个XC7Z020，表示它是一个7020的芯片：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622205156.png"/></p><p>可以在蓝框下面发现有一个XADC，后面的有一个系统监控（System Monitor），双击一下，然后点击OK，可以发现显示了一个温度值，如下图所示：</p><p><img src="https://tuchuang-junheng.oss-cn-qingdao.aliyuncs.com/tuchuang/20260622205553.png"/></p><p>这个显示的就是芯片内部的温度，由于这个板子没跑什么程序，所以它这个温度值比较低，只有32度左右。除此之外还可以观察一些内核电压，比方说可以点击温度值上面的加号，前面这里是它的一个16个通道的电压，这里可以找到这个VCCAUX，点击OK，可以看到这个是它的一个辅助电压，是1.8伏。继续观察其他电压，比方说VCC0_DDR是1.354伏，其他的电压也都可以观察。</p>]]></content>
       
       
       <categories>
